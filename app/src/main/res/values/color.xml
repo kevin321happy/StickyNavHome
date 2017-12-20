@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题色-->
+    <color name="theme_green">#00c799</color>
+    <color name="theme_blue">#50C2F8</color>
+    <color name="theme_orange">#EEAF55</color>
+    <color name="colorpink">#f0ff4090</color>
+    <color name="home_course_title">#555555</color>
+    <!--其他-->
+    <color name="orange">#e76219</color>
+    <color name="grgray">#7f7f7f</color>
+
+    <color name="green_grass_eighty">#80D3D3D3</color>
+    <color name="green_grass_half">#50FFFFFF</color>
+    <color name="green_grass_seventy">#30FFFFFF</color>
+    <color name="green_grass">#FFFFFF</color>
+    <color name="dialog_divider">#ffbcbcbc</color>
+    <color name="light_gray">#FFE7E3E3</color>
+    <!-- main -->
+    <color name="main_bg_color">#f7f7f8</color>
+    <color name="text_color">#242424</color>
+    <color name="text_hied_color">#7A7A7A</color>
+    <!-- XDialog -->
+    <color name="dialog_background">#fffbf6f2</color>
+    <color name="text_content">#ffa19d94</color>
+    <color name="dialog_btn_normal">#fffbf6f2</color>
+    <color name="dialog_btn_press">#ffece5df</color>
+    <color name="text_desc">#ffbebbb4</color>
+    <color name="text_title">#ff5f5f5f</color>
+    <color name="blue">#50C2F8</color>
+    <color name="devideline_listview">#ffe5e2d4</color>
+    <!-- 登陆 -->
+    <color name="white">#FFFFFF</color>
+
+    <color name="white_transparent">#66FFFFFF</color>
+    <color name="title_red">#FC3999</color>
+
+    <color name="title_color">#00C799</color>
+    <color name="title_color_qian">#32D2AC</color>
+    <color name="immerse_title_color">#8800C799</color>
+    <color name="qian_title_color">#88058b6c</color>
+    <color name="bg_qianhui">#f5f5f5</color>
+    <!--半透明的绿-->
+    <!-- <color name="immerse_title_color">#997CBB19</color>-->
+    <color name="line_gary">#D2D2D2</color>
+
+    <!--分割线-->
+    <color name="line_hui">#ebebeb</color>
+    <!--<color name="line_bg">#F9F9F9</color>-->
+    <!--分割线-->
+    <color name="line_entlist">#e5e5e5</color>
+    <color name="line_bg">#F0F0F0</color>
+    <color name="main_text_color">#333333</color>
+    <color name="color_666">#666666</color>
+    <color name="color_999">#999999</color>
+    <color name="color_888">#888888</color>
+    <color name="black_translucence">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="devider_color_gray_for_alert">#d7d7d7</color>
+    <color name="common_item_pressed_gray">#f7f7f7</color>
+    <!--字体-->
+    <color name="text_black">#3d3b3b</color>
+    <color name="text__defaulttext">#333333</color>
+    <color name="pickerview_timebtn_nor">#DF1E3D</color>
+    <color name="pickerview_timebtn_pre">#55DF1E3D</color>
+    <!-- 红色选择器
+    <color name="pickerview_timebtn_nor">#057dff</color>
+    <color name="pickerview_timebtn_pre">#c2daf5</color> -->
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="pickerview_topbar_title">#000000</color>
+    <color name="pickerview_wheelview_textcolor_out">#a8a8a8</color>
+    <color name="pickerview_wheelview_textcolor_center">#2b2a2a</color>
+    <color name="pickerview_wheelview_textcolor_divider">#d5d5d5</color>
+
+    <color name="bgColor_overlay">#60000000</color>
+
+    <color name="price_bg_color">#FE4B4B</color>
+
+
+    <!--大厅-->
+
+    <color name="red_qian">#EE805A</color>.
+    <!-- 课程，活动列表中标签的颜色 -->
+    <color name="label_color">#EA5514</color>.
+    <!-- 课程列表的简介和讲师，活动列表中开始/结束时间的颜色 -->
+    <color name="body_color">#616161</color>
+    <!-- 企业申请验证 游客登录和企业申请字体颜色-->
+    <!--<color name="enterprise_text_color">#8FC31F</color>-->
+    <color name="enterprise_text_color">#00C799</color>
+    <!-- 上下两列文字间隔的虚线颜色-->
+    <color name="space_color">#F7F8F0</color>
+    <!-- 购买弹出界面的背景颜色-->
+    <color name="buy_color">#F7F8F0</color>
+    <!--淡绿色背景-->
+    <!-- <color name="green_dan">#FAFCF1</color>-->
+    <color name="green_dan">#f5f5f5</color>
+    <color name="hui_qian">#f5f5f5</color>
+    <color name="color_marquee">#F38236</color>
+    <color name="color_course_name">#292929</color>
+    <!--天蓝色-->
+    <color name="mycourse_text_blue">#2EA7E0</color>
+    <!--我的积分选择颜色背景-->
+    <color name="myintegral_selector">#50C2F8</color>
+    <color name="divider_color">#F2F2F2</color>
+    <color name="blue_bg">#1C84C1</color>
+    <!--企业活动-->
+    <!--<color name="enterprise_act__text">#8FC320</color>-->
+    <color name="enterprise_act__text">#00C799</color>
+    <color name="enterprise_act__defaulttext">#333333</color>
+    <color name="enterprise_act_hui">#666666</color>
+    <color name="enterprise_act_qianhui">#999999</color>
+    <color name="enterprise_half_translucence">#88999999</color>
+    <color name="pk_icon_border_color">#ffd543</color>
+    <color name="bg_red">#ff0000</color>
+    <color name="pk_bg_bule">#D0EBF7</color>
+
+    <color name="camera_bg">#2c2c2c</color>
+    <color name="camera_progress_delete">#f68b2b</color>
+    <color name="camera_progress_overflow">#1b5d89</color>
+    <color name="camera_progress_split">#005084</color>
+    <color name="camera_progress_three">#24ff00</color>
+    <color name="color_381902">#222222</color>
+    <color name="transparent2">#50000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="color_4e3d31">#4e3d31</color>
+    <color name="grey8">#888888</color>
+    <color name="transparent_black_85">#DA000000</color>
+    <color name="transparent_black_90">#90000000</color>
+    <color name="transparent_black_55">#55000000</color>
+    <color name="topbar_3">#339EFE</color>
+    <color name="line">#dddddd</color>
+    <color name="text_10">#333333</color>
+    <color name="text_11">#999999</color>
+    <color name="gray_bg">#f8f8f8</color>
+</resources>

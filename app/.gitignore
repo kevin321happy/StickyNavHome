@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/build
+# Built application files
+*.apk
+# Files for the Dalvik VM
+# Java class files
+# Generated files
+# Gradle files
+.gradle/
+build/
+/*/buil
+
+# Local configuration file (sdk path, etc)
+local.properties

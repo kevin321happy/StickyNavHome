@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/px_space_25"
+        android:paddingLeft="@dimen/px_space_25"
+        android:paddingTop="@dimen/px_space_25">
+
+        <ImageView
+            android:id="@+id/iv_all_course_item_img"
+            android:layout_width="@dimen/px_space_300"
+            android:layout_height="@dimen/px_space_200"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_class_icon"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/px_space_25">
+
+            <TextView
+                android:id="@+id/tv__all_course_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="2016最新企业人力资源管理"
+                android:textColor="@color/text__defaulttext"
+                android:textSize="@dimen/px_space_40" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px_space_20"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_all_course_item_label_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:maxEms="8"
+                    android:padding="@dimen/px_space_4"
+                    android:singleLine="true"
+                    android:text="裘马草堂"
+                    android:textColor="@color/enterprise_act_qianhui"
+                    android:textSize="@dimen/px_space_36"
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_all_course_item_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px_space_20"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="简介：人力资源规划、招聘与配置、培训与开发、绩效管理..."
+                android:textColor="@color/enterprise_act_qianhui"
+                android:textSize="@dimen/px_space_39" />
+
+            <TextView
+                android:id="@+id/tv_all_course_item_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px_space_15"
+                android:text="评分"
+                android:textColor="@color/theme_orange"
+                android:textSize="@dimen/px_space_39" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+

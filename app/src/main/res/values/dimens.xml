@@ -1,0 +1,207 @@
+<resources>
+
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="text_size_big">@dimen/px_space_50</dimen>
+  <dimen name="text_size_basic">@dimen/px_space_45</dimen>
+  <dimen name="navigation_bar_height">@dimen/px_space_120</dimen>
+  <!-- zxing -->
+  <!-- XDialog -->
+  <dimen name="MinDialogWidth">320.0dip</dimen>
+  <dimen name="dialog_round_radius">4.0dip</dimen>
+  <dimen name="dialog_padding">15.0dip</dimen>
+
+  <dimen name="text_size_20">20.0sp</dimen>
+  <dimen name="text_size_18">18.0sp</dimen>
+  <dimen name="text_size_17">17.0sp</dimen>
+  <dimen name="text_size_16">16.0sp</dimen>
+  <dimen name="text_size_15">15.0sp</dimen>
+  <dimen name="text_size_14">14.0sp</dimen>
+  <dimen name="text_size_13">13.0sp</dimen>
+  <dimen name="text_size_12">12.0sp</dimen>
+  <dimen name="text_size_11">11.0sp</dimen>
+  <dimen name="text_size_10">10.0sp</dimen>
+  <dimen name="text_size_9">9.0sp</dimen>
+
+  <dimen name="space_200">200.0dp</dimen>
+
+  <dimen name="space_155">155.0dp</dimen>
+  <dimen name="space_150">150.0dp</dimen>
+  <dimen name="space_120">120.0dp</dimen>
+  <dimen name="space_110">110.0dp</dimen>
+  <dimen name="space_100">100.0dp</dimen>
+  <dimen name="space_90">90.0dp</dimen>
+  <dimen name="space_80">80.0dp</dimen>
+  <dimen name="space_70">70dp</dimen>
+  <dimen name="space_65">65dp</dimen>
+  <dimen name="space_60">60dp</dimen>
+  <dimen name="space_50">50dp</dimen>
+  <dimen name="space_55">55dp</dimen>
+  <dimen name="space_48">48dp</dimen>
+  <dimen name="space_45">45dp</dimen>
+  <dimen name="space_40">40dp</dimen>
+  <dimen name="space_42">42dp</dimen>
+  <dimen name="space_35">35.0dp</dimen>
+  <dimen name="space_33">33.0dp</dimen>
+  <dimen name="space_30">30.0dp</dimen>
+  <dimen name="space_25">25.0dp</dimen>
+  <dimen name="space_23">23.0dp</dimen>
+  <dimen name="space_22">22.0dp</dimen>
+  <dimen name="space_21">21.0dp</dimen>
+  <dimen name="space_20">20.0dp</dimen>
+  <dimen name="space_24">24.0dp</dimen>
+  <dimen name="space_19">19.0dp</dimen>
+  <dimen name="space_17">17.0dp</dimen>
+  <dimen name="space_16">16.0dp</dimen>
+  <dimen name="space_15">15.0dp</dimen>
+  <dimen name="space_14">14.0dp</dimen>
+  <dimen name="space_13">13.0dp</dimen>
+  <dimen name="space_12">12.0dp</dimen>
+  <dimen name="space_11">11.0dp</dimen>
+  <dimen name="space_10">10.0dp</dimen>
+  <dimen name="space_8">8.0dp</dimen>
+  <dimen name="space_7">7.0dp</dimen>
+  <dimen name="space_6">6.0dp</dimen>
+  <dimen name="space_5">5.0dp</dimen>
+  <dimen name="space_4">4.0dp</dimen>
+  <dimen name="space_3">3.0dp</dimen>
+  <dimen name="space_2">2.0dp</dimen>
+  <dimen name="space_1">1.0dp</dimen>
+
+
+  <!-- 顶部按钮栏高度 -->
+  <dimen name="pickerview_topbar_height">44dp</dimen>
+  <!-- 顶部按钮paddingLeft -->
+  <dimen name="pickerview_topbar_paddingleft">10dp</dimen>
+  <!-- 顶部按钮paddingRight -->
+  <dimen name="pickerview_topbar_paddingright">30dp</dimen>
+  <!-- 顶部按钮文字大小 -->
+  <dimen name="pickerview_topbar_btn_textsize">18sp</dimen>
+  <dimen name="pickerview_topbar_title_textsize">18sp</dimen>
+  <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
+  <dimen name="pickerview_textsize">20sp</dimen>
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+  <!--像素-->
+  <dimen name="px_space_1">1.0px</dimen>
+  <dimen name="px_space_2">2.0px</dimen>
+  <dimen name="px_space_3">3.0px</dimen>
+  <dimen name="px_space_4">4.0px</dimen>
+  <dimen name="px_space_5">5.0px</dimen>
+  <dimen name="px_space_6">6.0px</dimen>
+  <dimen name="px_space_7">7.0px</dimen>
+  <dimen name="px_space_8">8.0px</dimen>
+  <dimen name="px_space_9">9.0px</dimen>
+  <dimen name="px_space_10">10.0px</dimen>
+  <dimen name="px_space_11">11.0px</dimen>
+  <dimen name="px_space_12">12.0px</dimen>
+  <dimen name="px_space_13">13.0px</dimen>
+  <dimen name="px_space_14">14.0px</dimen>
+  <dimen name="px_space_15">15.0px</dimen>
+  <dimen name="px_space_16">16.0px</dimen>
+  <dimen name="px_space_17">17.0px</dimen>
+  <dimen name="px_space_18">18.0px</dimen>
+  <dimen name="px_space_19">19.0px</dimen>
+  <dimen name="px_space_20">20.0px</dimen>
+  <dimen name="px_space_21">21.0px</dimen>
+  <dimen name="px_space_22">22.0px</dimen>
+  <dimen name="px_space_23">23.0px</dimen>
+  <dimen name="px_space_24">24.0px</dimen>
+  <dimen name="px_space_25">25.0px</dimen>
+  <dimen name="px_space_26">26.0px</dimen>
+  <dimen name="px_space_27">27.0px</dimen>
+  <dimen name="px_space_28">28.0px</dimen>
+  <dimen name="px_space_29">29.0px</dimen>
+  <dimen name="px_space_30">30.0px</dimen>
+  <dimen name="px_space_31">31.0px</dimen>
+  <dimen name="px_space_32">32.0px</dimen>
+  <dimen name="px_space_33">33.0px</dimen>
+  <dimen name="px_space_34">34.0px</dimen>
+  <dimen name="px_space_35">35.0px</dimen>
+  <dimen name="px_space_36">36.0px</dimen>
+  <dimen name="px_space_37">37.0px</dimen>
+  <dimen name="px_space_38">38.0px</dimen>
+  <dimen name="px_space_39">39.0px</dimen>
+  <dimen name="px_space_40">40.0px</dimen>
+  <dimen name="px_space_44">44.0px</dimen>
+  <dimen name="px_space_42">42.0px</dimen>
+  <dimen name="px_space_43">43.0px</dimen>
+  <dimen name="px_space_45">45.0px</dimen>
+  <dimen name="px_space_46">46.0px</dimen>
+  <dimen name="px_space_48">48.0px</dimen>
+  <dimen name="px_space_50">50.0px</dimen>
+  <dimen name="px_space_52">52.0px</dimen>
+  <dimen name="px_space_55">55.0px</dimen>
+  <dimen name="px_space_56">56.0px</dimen>
+  <dimen name="px_space_60">60.0px</dimen>
+  <dimen name="px_space_62">62.0px</dimen>
+  <dimen name="px_space_70">70.0px</dimen>
+  <dimen name="px_space_72">72.0px</dimen>
+  <dimen name="px_space_75">75.0px</dimen>
+  <dimen name="px_space_80">80.0px</dimen>
+  <dimen name="px_space_85">85.0px</dimen>
+  <dimen name="px_space_90">90.0px</dimen>
+  <dimen name="px_space_100">100.0px</dimen>
+  <dimen name="px_space_110">110.0px</dimen>
+  <dimen name="px_space_116">116.0px</dimen>
+  <dimen name="px_space_120">120.0px</dimen>
+  <dimen name="px_space_126">126.0px</dimen>
+  <dimen name="px_space_130">130.0px</dimen>
+  <dimen name="px_space_140">140.0px</dimen>
+  <dimen name="px_space_145">145.0px</dimen>
+  <dimen name="px_space_150">150.0px</dimen>
+  <dimen name="px_space_157">157.0px</dimen>
+  <dimen name="px_space_160">160.0px</dimen>
+  <dimen name="px_space_180">180.0px</dimen>
+  <dimen name="px_space_200">200.0px</dimen>
+  <dimen name="px_space_205">205.0px</dimen>
+  <dimen name="px_space_206">206.0px</dimen>
+  <dimen name="px_space_210">210.0px</dimen>
+  <dimen name="px_space_220">220.0px</dimen>
+  <dimen name="px_space_240">240.0px</dimen>
+  <dimen name="px_space_245">245.0px</dimen>
+  <dimen name="px_space_250">250.0px</dimen>
+  <dimen name="px_space_255">255.0px</dimen>
+  <dimen name="px_space_260">260.0px</dimen>
+  <dimen name="px_space_270">270.0px</dimen>
+  <dimen name="px_space_280">280.0px</dimen>
+  <dimen name="px_space_285">285.0px</dimen>
+  <dimen name="px_space_300">300.0px</dimen>
+  <dimen name="px_space_308">308.0px</dimen>
+  <dimen name="px_space_310">310.0px</dimen>
+  <dimen name="px_space_314">314.0px</dimen>
+  <dimen name="px_space_320">320.0px</dimen>
+  <dimen name="px_space_330">330.0px</dimen>
+  <dimen name="px_space_318">318.0px</dimen>
+  <dimen name="px_space_340">340.0px</dimen>
+  <dimen name="px_space_350">350.0px</dimen>
+  <dimen name="px_space_360">360.0px</dimen>
+  <dimen name="px_space_375">375.0px</dimen>
+  <dimen name="px_space_400">400.0px</dimen>
+  <dimen name="px_space_430">430.0px</dimen>
+  <dimen name="px_space_435">435.0px</dimen>
+  <dimen name="px_space_448">448.0px</dimen>
+  <dimen name="px_space_450">450.0px</dimen>
+  <dimen name="px_space_480">480.0px</dimen>
+  <dimen name="px_space_482">482.0px</dimen>
+  <dimen name="px_space_500">500.0px</dimen>
+  <dimen name="px_space_505">505.0px</dimen>
+  <dimen name="px_space_520">520.0px</dimen>
+  <dimen name="px_space_550">550.0px</dimen>
+  <dimen name="px_space_600">600.0px</dimen>
+  <dimen name="px_space_660">660.0px</dimen>
+  <dimen name="px_space_700">700.0px</dimen>
+  <dimen name="px_space_750">750.0px</dimen>
+  <dimen name="px_space_800">800.0px</dimen>
+  <dimen name="px_space_820">820.0px</dimen>
+  <dimen name="px_space_850">850.0px</dimen>
+  <dimen name="px_space_900">900.0px</dimen>
+  <dimen name="px_space_902">902.0px</dimen>
+  <dimen name="px_space_950">950.0px</dimen>
+  <dimen name="px_space_980">980.0px</dimen>
+  <dimen name="px_space_990">990.0px</dimen>
+  <dimen name="px_space_1000">1000.0px</dimen>
+  <dimen name="px_space_1100">1100.0px</dimen>
+  <dimen name="px_space_1023">1023.0px</dimen>
+
+</resources>
