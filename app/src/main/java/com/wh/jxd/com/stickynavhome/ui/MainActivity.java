@@ -1,4 +1,4 @@
-package com.wh.jxd.com.stickynavhome;
+package com.wh.jxd.com.stickynavhome.ui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.wh.jxd.com.stickynavhome.R;
 import com.wh.jxd.com.stickynavhome.utils.StatusBarUtil;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.CustomViewPagerIndicator;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.StickyNavLayout;

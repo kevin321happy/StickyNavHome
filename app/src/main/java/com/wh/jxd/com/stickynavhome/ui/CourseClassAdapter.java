@@ -1,10 +1,11 @@
-package com.wh.jxd.com.stickynavhome;
+package com.wh.jxd.com.stickynavhome.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wh.jxd.com.stickynavhome.R;
 import com.wh.jxd.com.stickynavhome.widget.CircleImageView;
 
 
