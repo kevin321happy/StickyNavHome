@@ -25,7 +25,7 @@ import com.wh.jxd.com.stickynavhome.R;
 public class CustomViewPagerIndicator extends LinearLayout {
 
     private static final int COLOR_TEXT_NORMAL = 0xFF000000;
-    private static final int COLOR_INDICATOR_COLOR = Color.GREEN;
+    private static final int COLOR_INDICATOR_COLOR = R.color.myintegral_selector;
 
     private String[] mTitles;
     private int mTabCount;
@@ -66,12 +66,16 @@ public class CustomViewPagerIndicator extends LinearLayout {
         this.mIndicatorColor = indicatorColor;
     }
 
+    /**
+     * 绘制指示器
+     * @param canvas
+     */
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         canvas.save();
-        canvas.translate(mTranslationX, getHeight() - 2);
-        canvas.drawLine(0, 0, mTabWidth, 0, mPaint);
+        canvas.translate(mTranslationX, getHeight()-2);
+        canvas.drawLine(30, 0, mTabWidth-30, 0, mPaint);
         canvas.restore();
     }
 
@@ -81,7 +85,7 @@ public class CustomViewPagerIndicator extends LinearLayout {
          *  0-1:position=0 ;1-0:postion=0;
          * </pre>
          */
-        mTranslationX = getWidth() / mTabCount * (position + offset);
+        mTranslationX = getWidth() / mTabCount * (position+offset);
         invalidate();
     }
 

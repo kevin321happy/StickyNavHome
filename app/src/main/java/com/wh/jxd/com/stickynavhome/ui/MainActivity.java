@@ -21,7 +21,7 @@ import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.StickyNavLayout;
 
 public class MainActivity extends AppCompatActivity implements StickyNavLayout.onScrollListenre, CustomViewPagerIndicator.onTabClickListener {
 
-    private String[] mTitles = new String[]{"射手", "坦克", "法师", "辅助", "战士"};
+    private String[] mTitles = new String[]{"射手", "坦克", "法师", "辅助", "战士","打野"};
     private CustomViewPagerIndicator mIndicator;
     private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
             toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.transparent));//使用colors.xml文件中的颜色
             //Toolbar背景色透明度
             toolbar.setAlpha(offset);
-//                    tv_image.setAlpha(offset);
+                    tv_image.setAlpha(offset);
             status_bar.setAlpha(1 - offset);
         }
     }
