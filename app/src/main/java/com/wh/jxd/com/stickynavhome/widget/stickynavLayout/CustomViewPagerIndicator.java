@@ -1,5 +1,6 @@
 package com.wh.jxd.com.stickynavhome.widget.stickynavLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,8 +11,11 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.wh.jxd.com.stickynavhome.R;
 
 /**
  * Created by kevin321vip on 2017/12/20.
@@ -35,41 +39,35 @@ public class CustomViewPagerIndicator extends LinearLayout {
         this.mOnTabClickListener = mOnTabClickListener;
     }
 
-    public CustomViewPagerIndicator(Context context)
-    {
+    public CustomViewPagerIndicator(Context context) {
         this(context, null);
     }
 
-    public CustomViewPagerIndicator(Context context, AttributeSet attrs)
-    {
+    public CustomViewPagerIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint.setColor(mIndicatorColor);
         mPaint.setStrokeWidth(9.0F);
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh)
-    {
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mTabWidth = w / mTabCount;
     }
 
-    public void setTitles(String[] titles)
-    {
+    public void setTitles(String[] titles) {
         mTitles = titles;
         mTabCount = titles.length;
         generateTitleView();
 
     }
 
-    public void setIndicatorColor(int indicatorColor)
-    {
+    public void setIndicatorColor(int indicatorColor) {
         this.mIndicatorColor = indicatorColor;
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas)
-    {
+    protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         canvas.save();
         canvas.translate(mTranslationX, getHeight() - 2);
@@ -77,8 +75,7 @@ public class CustomViewPagerIndicator extends LinearLayout {
         canvas.restore();
     }
 
-    public void scroll(int position, float offset)
-    {
+    public void scroll(int position, float offset) {
         /**
          * <pre>
          *  0-1:position=0 ;1-0:postion=0;
@@ -90,21 +87,33 @@ public class CustomViewPagerIndicator extends LinearLayout {
 
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev)
-    {
+    public boolean dispatchTouchEvent(MotionEvent ev) {
         return super.dispatchTouchEvent(ev);
     }
 
-    private void generateTitleView()
-    {
+    @SuppressLint("NewApi")
+    private void generateTitleView() {
         if (getChildCount() > 0) {
             this.removeAllViews();
         }
         int count = mTitles.length;
 
         setWeightSum(count);
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
+            //这里是模拟在Tab栏上显示小红点标示有新的内容,实际开发中可以根据传入的数据来判断是否显示
+            if (i == 1) {
+                View view = new View(getContext());
+                LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.gravity = Gravity.RIGHT;
+                layoutParams.gravity = Gravity.TOP;
+                layoutParams.width = 20;
+                layoutParams.height = 20;
+                layoutParams.rightMargin = 10;
+                layoutParams.topMargin = 10;
+                view.setBackground(getContext().getResources().getDrawable(R.drawable.bg_new));
+                view.setLayoutParams(layoutParams);
+                addView(view);
+            }
             TextView tv = new TextView(getContext());
             LayoutParams lp = new LayoutParams(0,
                     LayoutParams.MATCH_PARENT);
@@ -115,12 +124,10 @@ public class CustomViewPagerIndicator extends LinearLayout {
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             tv.setLayoutParams(lp);
             final int finalI = i;
-            tv.setOnClickListener(new OnClickListener()
-            {
+            tv.setOnClickListener(new OnClickListener() {
                 @Override
-                public void onClick(View v)
-                {
-                    if (mOnTabClickListener!=null){
+                public void onClick(View v) {
+                    if (mOnTabClickListener != null) {
                         mOnTabClickListener.onTabClick(finalI);
                     }
                 }
@@ -132,7 +139,7 @@ public class CustomViewPagerIndicator extends LinearLayout {
     /**
      * Tab的点击事件回调出去
      */
-    public interface onTabClickListener{
+    public interface onTabClickListener {
 
         void onTabClick(int position);
 
