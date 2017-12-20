@@ -11,7 +11,10 @@
  -------
  效果图如下：
   -------
-  ![image](https://github.com/kevin321happy/StickyNavHome/tree/master/app/gif)
+
+
+
+  ![image](https://github.com/kevin321happy/StickyNavHome/blob/master/app/gif/home.gif)
 
 
 
