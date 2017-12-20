@@ -13,7 +13,7 @@
 
  效果图如下：
   -------
-  ![image](https://github.com/kevin321happy/BaiDuMapDemo/blob/master/app/map01.gif)
+  ![image](https://github.com/kevin321happy/StickyNavHome/blob/master/app/gif/home.gif)
 
 
 
