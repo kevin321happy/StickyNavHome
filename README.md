@@ -10,10 +10,10 @@
  -------
 3、指示器滑到顶部显示在ToolBar的下方,不超过ToolBar
  -------
-
  效果图如下：
   -------
-  ![image](https://github.com/kevin321happy/BaiDuMapDemo/blob/master/app/map01.gif)
+  ![image](https://github.com/kevin321happy/StickyNavHome/tree/master/app/gif)
+
 
 
 
