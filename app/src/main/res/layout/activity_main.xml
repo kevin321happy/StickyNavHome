@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,16 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <RelativeLayout
             android:id="@id/id_stickynavlayout_topview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/bg_image"
                 android:layout_width="match_parent"
                 android:layout_height="600px"
                 android:scaleType="fitXY"
                 android:src="@drawable/mao" />
+
             <LinearLayout
                 android:id="@+id/ll_one"
                 android:layout_width="match_parent"
@@ -27,6 +29,7 @@
                 android:layout_below="@+id/bg_image"
                 android:layout_marginTop="80px"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="80px"
@@ -45,17 +48,17 @@
                     android:layout_marginLeft="20px"
                     android:layout_marginRight="20px"
                     android:layout_marginTop="30px" />
+
                 <LinearLayout
-                    android:layout_marginTop="@dimen/px_space_40"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px_space_40"
                     android:background="@color/green_dan"
                     android:orientation="horizontal"
+                    android:paddingBottom="@dimen/px_space_30"
                     android:paddingLeft="@dimen/px_space_45"
                     android:paddingRight="@dimen/px_space_45"
-                    android:paddingTop="@dimen/px_space_30"
-                    android:paddingBottom="@dimen/px_space_30"
-                    >
+                    android:paddingTop="@dimen/px_space_30">
 
                     <TextView
                         android:layout_width="0dp"
@@ -63,20 +66,10 @@
                         android:layout_marginLeft="@dimen/px_space_20"
                         android:layout_marginRight="@dimen/px_space_20"
                         android:layout_weight="1"
-                        android:textColor="@color/text__defaulttext"
                         android:background="@drawable/bg_tv_tool"
                         android:gravity="center"
-                        android:text="内训助手" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/px_space_80"
-                        android:layout_marginLeft="@dimen/px_space_20"
-                        android:layout_marginRight="@dimen/px_space_20"
-                        android:layout_weight="1"
-                        android:textColor="@color/text__defaulttext"
-                        android:background="@drawable/bg_tv_tool"
-                        android:gravity="center"
-                        android:text="Pk榜" />
+                        android:text="内训助手"
+                        android:textColor="@color/text__defaulttext" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -84,29 +77,43 @@
                         android:layout_marginLeft="@dimen/px_space_20"
                         android:layout_marginRight="@dimen/px_space_20"
                         android:layout_weight="1"
-                        android:textColor="@color/text__defaulttext"
                         android:background="@drawable/bg_tv_tool"
                         android:gravity="center"
-                        android:text="企业活动" />
+                        android:text="Pk榜"
+                        android:textColor="@color/text__defaulttext" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/px_space_80"
+                        android:layout_marginLeft="@dimen/px_space_20"
+                        android:layout_marginRight="@dimen/px_space_20"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tv_tool"
+                        android:gravity="center"
+                        android:text="企业活动"
+                        android:textColor="@color/text__defaulttext" />
                 </LinearLayout>
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/iv_study_info"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
                 android:layout_below="@+id/ll_one"
-                android:layout_width="match_parent"
-                android:background="@drawable/bg_study_info"
-                android:layout_height="400px" />
+                android:background="@drawable/bg_study_info" />
+
             <View
-                android:layout_below="@+id/iv_study_info"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/px_space_30"/>
+                android:layout_height="@dimen/px_space_30"
+                android:layout_below="@+id/iv_study_info" />
         </RelativeLayout>
+
         <com.wh.jxd.com.stickynavhome.widget.stickynavLayout.CustomViewPagerIndicator
             android:id="@id/id_stickynavlayout_indicator"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="#ffffffff" />
+
         <android.support.v4.view.ViewPager
             android:id="@id/id_stickynavlayout_viewpager"
             android:layout_width="match_parent"

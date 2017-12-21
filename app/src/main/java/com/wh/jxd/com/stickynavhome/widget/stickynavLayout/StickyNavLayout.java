@@ -92,7 +92,7 @@ public class StickyNavLayout extends LinearLayout {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         //200是模拟的toolBar加上状态栏的高度,保证了指示器的位置在ToolBar的下面
-        mTopViewHeight = mTop.getMeasuredHeight() - 200;
+        mTopViewHeight = mTop.getMeasuredHeight() - 220;
     }
 
     /**

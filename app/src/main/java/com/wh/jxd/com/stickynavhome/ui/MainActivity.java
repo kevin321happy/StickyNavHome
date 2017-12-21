@@ -17,9 +17,12 @@ import android.widget.Toast;
 import com.wh.jxd.com.stickynavhome.R;
 import com.wh.jxd.com.stickynavhome.utils.StatusBarUtil;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.CustomViewPagerIndicator;
+import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.MyViewPagerIndicator;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.StickyNavLayout;
 
-public class MainActivity extends AppCompatActivity implements StickyNavLayout.onScrollListenre, CustomViewPagerIndicator.onTabClickListener {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements StickyNavLayout.onScrollListenre, CustomViewPagerIndicator.onTabClickListener, CustomViewPagerIndicator.onPagerChangeListener {
 
     private String[] mTitles = new String[]{"射手", "坦克", "法师", "辅助", "战士","打野"};
     private CustomViewPagerIndicator mIndicator;
@@ -44,10 +47,9 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         getSupportActionBar().hide();
         //设置透明的状态栏
 //        StatusBarUtil.setStatusBarColor(this, R.color.transparent);
-
         initView();
         initDatas();
-        initEvents();
+//        initEvents();
     }
 
     private void initEvents() {
@@ -71,8 +73,12 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
     }
 
     private void initDatas() {
+
         mIndicator.setTitles(mTitles);
         mIndicator.setmOnTabClickListener(this);
+
+        mIndicator.setmViewPager(mViewPager,0);
+        mIndicator.setmOnPagerChangeListener(this);
 
         for (int i = 0; i < mTitles.length; i++) {
             mFragments[i] = (TabFragment) TabFragment.newInstance(mTitles[i]);
@@ -90,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
             }
 
         };
-
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);
     }
@@ -149,11 +154,30 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
      *
      * @param position
      */
+//    @Override
     @Override
     public void onTabClick(int position) {
         if (mViewPager != null) {
             mViewPager.setCurrentItem(position);
         }
+
+    }
+
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if (mViewPager!=null){
+            mViewPager.setCurrentItem(position);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
 
     }
 }

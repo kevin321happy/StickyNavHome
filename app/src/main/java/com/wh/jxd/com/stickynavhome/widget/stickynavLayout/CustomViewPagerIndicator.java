@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -22,9 +23,15 @@ import com.wh.jxd.com.stickynavhome.R;
  * 自定义的ViewpagerIndicator
  */
 
-public class CustomViewPagerIndicator extends LinearLayout {
-
+public class CustomViewPagerIndicator extends LinearLayout implements ViewPager.OnPageChangeListener {
+    /**
+     * 标题正常时的颜色
+     */
     private static final int COLOR_TEXT_NORMAL = 0xFF000000;
+    /**
+     * 标题选中时的颜色
+     */
+    private static final int COLOR_TEXT_HIGHLIGHTCOLOR = 0xFFFFFFFF;
     private static final int COLOR_INDICATOR_COLOR = R.color.myintegral_selector;
 
     private String[] mTitles;
@@ -33,16 +40,34 @@ public class CustomViewPagerIndicator extends LinearLayout {
     private float mTranslationX;
     private Paint mPaint = new Paint();
     private int mTabWidth;
-    private onTabClickListener mOnTabClickListener;
+    private onPagerChangeListener mOnPagerChangeListener;
 
-    public void setmOnTabClickListener(onTabClickListener mOnTabClickListener) {
-        this.mOnTabClickListener = mOnTabClickListener;
+    public void setmOnPagerChangeListener(onPagerChangeListener mOnPagerChangeListener) {
+        this.mOnPagerChangeListener = mOnPagerChangeListener;
     }
+
+    private ViewPager mViewPager;
+
+    /**
+     * 设置Viewpager的绑定
+     *
+     * @param mViewPager
+     */
+    public void setmViewPager(ViewPager mViewPager, int originPos) {
+        this.mViewPager = mViewPager;
+        mViewPager.setOnPageChangeListener(this);
+        //设置当前页被选中
+        mViewPager.setCurrentItem(originPos);
+        //字体高亮显示
+        highLightTextView(originPos);
+    }
+
 
     public CustomViewPagerIndicator(Context context) {
         this(context, null);
     }
 
+    @SuppressLint("ResourceAsColor")
     public CustomViewPagerIndicator(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint.setColor(mIndicatorColor);
@@ -59,7 +84,6 @@ public class CustomViewPagerIndicator extends LinearLayout {
         mTitles = titles;
         mTabCount = titles.length;
         generateTitleView();
-
     }
 
     public void setIndicatorColor(int indicatorColor) {
@@ -68,14 +92,15 @@ public class CustomViewPagerIndicator extends LinearLayout {
 
     /**
      * 绘制指示器
+     *
      * @param canvas
      */
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         canvas.save();
-        canvas.translate(mTranslationX, getHeight()-2);
-        canvas.drawLine(30, 0, mTabWidth-30, 0, mPaint);
+        canvas.translate(mTranslationX, getHeight() - 2);
+        canvas.drawLine(0, 0, mTabWidth, 0, mPaint);
         canvas.restore();
     }
 
@@ -85,7 +110,7 @@ public class CustomViewPagerIndicator extends LinearLayout {
          *  0-1:position=0 ;1-0:postion=0;
          * </pre>
          */
-        mTranslationX = getWidth() / mTabCount * (position+offset);
+        mTranslationX = getWidth() / mTabCount * (position + offset);
         invalidate();
     }
 
@@ -105,19 +130,19 @@ public class CustomViewPagerIndicator extends LinearLayout {
         setWeightSum(count);
         for (int i = 0; i < count; i++) {
             //这里是模拟在Tab栏上显示小红点标示有新的内容,实际开发中可以根据传入的数据来判断是否显示
-            if (i == 1) {
-                View view = new View(getContext());
-                LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                layoutParams.gravity = Gravity.RIGHT;
-                layoutParams.gravity = Gravity.TOP;
-                layoutParams.width = 20;
-                layoutParams.height = 20;
-                layoutParams.rightMargin = 10;
-                layoutParams.topMargin = 10;
-                view.setBackground(getContext().getResources().getDrawable(R.drawable.bg_new));
-                view.setLayoutParams(layoutParams);
-                addView(view);
-            }
+//            if (i == 1) {
+//                View view = new View(getContext());
+//                LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                layoutParams.gravity = Gravity.RIGHT;
+//                layoutParams.gravity = Gravity.TOP;
+//                layoutParams.width = 20;
+//                layoutParams.height = 20;
+//                layoutParams.rightMargin = 10;
+//                layoutParams.topMargin = 30;
+//                view.setBackground(getContext().getResources().getDrawable(R.drawable.bg_new));
+//                view.setLayoutParams(layoutParams);
+//                addView(view);
+//            }
             TextView tv = new TextView(getContext());
             LayoutParams lp = new LayoutParams(0,
                     LayoutParams.MATCH_PARENT);
@@ -131,8 +156,8 @@ public class CustomViewPagerIndicator extends LinearLayout {
             tv.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mOnTabClickListener != null) {
-                        mOnTabClickListener.onTabClick(finalI);
+                    if (mOnPagerChangeListener != null) {
+                        mOnPagerChangeListener.onPageSelected(finalI);
                     }
                 }
             });
@@ -141,11 +166,69 @@ public class CustomViewPagerIndicator extends LinearLayout {
     }
 
     /**
-     * Tab的点击事件回调出去
+     * 通过Indicator将ViewPager的事件回调出去
+     *
+     * @param position
+     * @param positionOffset
+     * @param positionOffsetPixels
      */
-    public interface onTabClickListener {
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        scroll(position, positionOffset);
+        if (mOnPagerChangeListener != null) {
+            mOnPagerChangeListener.onPageScrolled(position, positionOffset, positionOffsetPixels);
+        }
+    }
 
-        void onTabClick(int position);
+    @Override
+    public void onPageSelected(int position) {
+        // 设置字体颜色高亮
+        resetTextViewColor();
+        highLightTextView(position);
+        if (mOnPagerChangeListener != null) {
+            mOnPagerChangeListener.onPageSelected(position);
+        }
+    }
 
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        if (mOnPagerChangeListener != null) {
+            mOnPagerChangeListener.onPageScrollStateChanged(state);
+        }
+    }
+    /**
+     * 设置字体的颜色高亮
+     *
+     * @param position
+     */
+    private void highLightTextView(int position) {
+        View view = getChildAt(position);
+        if (view instanceof TextView) {
+            ((TextView) view).setTextColor(COLOR_INDICATOR_COLOR);
+        }
+    }
+    /**
+     * 重置TextView颜色
+     */
+    private void resetTextViewColor() {
+        for (int i = 0; i < getChildCount(); i++) {
+            View view = getChildAt(i);
+            if (view instanceof TextView) {
+                ((TextView) view).setTextColor(COLOR_TEXT_NORMAL);
+            }
+        }
+    }
+
+    /**
+     * 定义接口回调Pager的事件
+     */
+    public interface onPagerChangeListener {
+        public void onPageScrolled(int position, float positionOffset,
+                                   int positionOffsetPixels);
+
+        public void onPageSelected(int position);
+
+        public void onPageScrollStateChanged(int state);
     }
 }
