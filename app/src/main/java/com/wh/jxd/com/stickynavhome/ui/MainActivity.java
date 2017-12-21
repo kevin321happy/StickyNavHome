@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         mIndicator.setTitles(mTitles);
 
 
+
         mIndicator.setmViewPager(mViewPager, 0);
         mIndicator.setmOnPagerChangeListener(this);
 
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         status_bar = findViewById(R.id.status_bar);
         status_bar.setAlpha(0);
         sticky_layout.setMonScrollListener(this);
+
+
 
 
         initRecycle();

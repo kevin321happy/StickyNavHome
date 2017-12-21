@@ -9,12 +9,13 @@ import com.wh.jxd.com.stickynavhome.R;
 
 /**
  * Created by kevin321vip on 2017/12/21.
+ * 测试自定义控件效果的界面
  */
 
-public class RedTextActivity extends Activity{
+public class RedTextActivity extends Activity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_red_text);
+        setContentView(R.layout.wave_demo_layout);
     }
 }
