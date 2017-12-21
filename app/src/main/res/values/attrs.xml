@@ -10,5 +10,14 @@
         <attr name="item_count" format="integer"></attr>
     </declare-styleable>
 
+    <!--带红点的字体的自定义属性-->
+    <declare-styleable name="RedTipTextView">
+        <attr name="redTipVisibility">
+            <enum name="visible" value="1"></enum>
+            <enum name="invisible" value="0"></enum>
+            <enum name="gone" value="2"></enum>
+        </attr>
+    </declare-styleable>
+
 
 </resources>

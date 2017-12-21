@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.widget.RedTipTextView;
 
 /**
  * Created by kevin321vip on 2017/12/20.
@@ -33,7 +34,6 @@ public class CustomViewPagerIndicator extends LinearLayout implements ViewPager.
      */
     private static final int COLOR_TEXT_HIGHLIGHTCOLOR = 0xFFFFFFFF;
     private static final int COLOR_INDICATOR_COLOR = R.color.myintegral_selector;
-
     private String[] mTitles;
     private int mTabCount;
     private int mIndicatorColor = COLOR_INDICATOR_COLOR;
@@ -130,23 +130,15 @@ public class CustomViewPagerIndicator extends LinearLayout implements ViewPager.
         setWeightSum(count);
         for (int i = 0; i < count; i++) {
             //这里是模拟在Tab栏上显示小红点标示有新的内容,实际开发中可以根据传入的数据来判断是否显示
-//            if (i == 1) {
-//                View view = new View(getContext());
-//                LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                layoutParams.gravity = Gravity.RIGHT;
-//                layoutParams.gravity = Gravity.TOP;
-//                layoutParams.width = 20;
-//                layoutParams.height = 20;
-//                layoutParams.rightMargin = 10;
-//                layoutParams.topMargin = 30;
-//                view.setBackground(getContext().getResources().getDrawable(R.drawable.bg_new));
-//                view.setLayoutParams(layoutParams);
-//                addView(view);
-//            }
-            TextView tv = new TextView(getContext());
+            RedTipTextView tv = new RedTipTextView(getContext());
+            if (i==2||i==4){
+                //设置红点提示显示
+                tv.setmTipvisible(RedTipTextView.RED_TIP_VISIBLE);
+            }
             LayoutParams lp = new LayoutParams(0,
                     LayoutParams.MATCH_PARENT);
             lp.weight = 1;
+            tv.setPadding(30,10,20,30);
             tv.setGravity(Gravity.CENTER);
             tv.setTextColor(COLOR_TEXT_NORMAL);
             tv.setText(mTitles[i]);
@@ -226,7 +218,6 @@ public class CustomViewPagerIndicator extends LinearLayout implements ViewPager.
     public interface onPagerChangeListener {
         public void onPageScrolled(int position, float positionOffset,
                                    int positionOffsetPixels);
-
         public void onPageSelected(int position);
 
         public void onPageScrollStateChanged(int state);

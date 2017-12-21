@@ -1,5 +1,6 @@
 package com.wh.jxd.com.stickynavhome.ui;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
@@ -17,14 +18,11 @@ import android.widget.Toast;
 import com.wh.jxd.com.stickynavhome.R;
 import com.wh.jxd.com.stickynavhome.utils.StatusBarUtil;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.CustomViewPagerIndicator;
-import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.MyViewPagerIndicator;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.StickyNavLayout;
 
-import java.util.ArrayList;
+public class MainActivity extends AppCompatActivity implements StickyNavLayout.onScrollListenre, CustomViewPagerIndicator.onPagerChangeListener, View.OnClickListener {
 
-public class MainActivity extends AppCompatActivity implements StickyNavLayout.onScrollListenre, CustomViewPagerIndicator.onTabClickListener, CustomViewPagerIndicator.onPagerChangeListener {
-
-    private String[] mTitles = new String[]{"射手", "坦克", "法师", "辅助", "战士","打野"};
+    private String[] mTitles = new String[]{"射手", "坦克", "法师", "辅助", "战士", "打野"};
     private CustomViewPagerIndicator mIndicator;
     private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
@@ -36,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
     private RelativeLayout topView;
     private ImageView tv_image;
     private RecyclerView rcv_course;
+    private ImageView study_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,35 +48,15 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
 //        StatusBarUtil.setStatusBarColor(this, R.color.transparent);
         initView();
         initDatas();
-//        initEvents();
     }
 
-    private void initEvents() {
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-            }
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset,
-                                       int positionOffsetPixels) {
-                mIndicator.scroll(position, positionOffset);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-    }
 
     private void initDatas() {
 
         mIndicator.setTitles(mTitles);
-        mIndicator.setmOnTabClickListener(this);
 
-        mIndicator.setmViewPager(mViewPager,0);
+
+        mIndicator.setmViewPager(mViewPager, 0);
         mIndicator.setmOnPagerChangeListener(this);
 
         for (int i = 0; i < mTitles.length; i++) {
@@ -111,9 +90,12 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         tv_image = (ImageView) findViewById(R.id.bg_image);
         rcv_course = (RecyclerView) findViewById(R.id.rcv_course);
+        study_info = (ImageView) findViewById(R.id.iv_study_info);
+        study_info.setOnClickListener(this);
         status_bar = findViewById(R.id.status_bar);
         status_bar.setAlpha(0);
         sticky_layout.setMonScrollListener(this);
+
 
         initRecycle();
 
@@ -144,23 +126,9 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
             toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.transparent));//使用colors.xml文件中的颜色
             //Toolbar背景色透明度
             toolbar.setAlpha(offset);
-                    tv_image.setAlpha(offset);
+            tv_image.setAlpha(offset);
             status_bar.setAlpha(1 - offset);
         }
-    }
-
-    /**
-     * 指示器的点击监听
-     *
-     * @param position
-     */
-//    @Override
-    @Override
-    public void onTabClick(int position) {
-        if (mViewPager != null) {
-            mViewPager.setCurrentItem(position);
-        }
-
     }
 
 
@@ -171,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
 
     @Override
     public void onPageSelected(int position) {
-        if (mViewPager!=null){
+        if (mViewPager != null) {
             mViewPager.setCurrentItem(position);
         }
     }
@@ -179,5 +147,11 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, RedTextActivity.class);
+        startActivity(intent);
     }
 }
