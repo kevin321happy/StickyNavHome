@@ -100,7 +100,8 @@ public class CustomViewPagerIndicator extends LinearLayout implements ViewPager.
         super.dispatchDraw(canvas);
         canvas.save();
         canvas.translate(mTranslationX, getHeight() - 2);
-        canvas.drawLine(0, 0, mTabWidth, 0, mPaint);
+        //前后缩进20个像素,减小指示器滑块的宽度
+        canvas.drawLine(20, 0, mTabWidth-20, 0, mPaint);
         canvas.restore();
     }
 
