@@ -159,7 +159,6 @@
                     android:src="@drawable/hujiao"
                     android:textColor="@android:color/white"
                     android:textSize="25sp" />
-
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/et_search_view"
                     android:layout_width="0dp"
@@ -170,7 +169,6 @@
                     android:gravity="center"
                     android:hint="开始搜索"
                     android:textColorHint="@color/blue" />
-
                 <ImageView
                     android:id="@+id/icmessage"
                     android:layout_width="80px"

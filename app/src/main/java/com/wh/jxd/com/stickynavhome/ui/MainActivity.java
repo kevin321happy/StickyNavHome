@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         //设置状态栏黑色字体
         StatusBarUtil.StatusBarLightMode(this);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         //设置透明的状态栏
 //        StatusBarUtil.setStatusBarColor(this, R.color.transparent);
         initView();
@@ -52,18 +52,12 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
 
 
     private void initDatas() {
-
         mIndicator.setTitles(mTitles);
-
-
-
         mIndicator.setmViewPager(mViewPager, 0);
         mIndicator.setmOnPagerChangeListener(this);
-
         for (int i = 0; i < mTitles.length; i++) {
             mFragments[i] = (TabFragment) TabFragment.newInstance(mTitles[i]);
         }
-
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public int getCount() {
@@ -74,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
             public Fragment getItem(int position) {
                 return mFragments[position];
             }
-
         };
         mViewPager.setAdapter(mAdapter);
         mViewPager.setCurrentItem(0);

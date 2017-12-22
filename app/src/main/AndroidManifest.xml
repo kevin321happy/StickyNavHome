@@ -6,9 +6,21 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".AppcationEx"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
+        <!--百分比布局-->
+
+        <meta-data
+            android:name="design_width"
+            android:value="1080">
+        </meta-data>
+        <meta-data
+            android:name="design_height"
+            android:value="1920">
+        </meta-data>
+
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

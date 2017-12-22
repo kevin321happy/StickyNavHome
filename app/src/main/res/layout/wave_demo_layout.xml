@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+   <include layout="@layout/common_toolbar_layout"/>
     <com.wh.jxd.com.stickynavhome.widget.DynamicWave
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
