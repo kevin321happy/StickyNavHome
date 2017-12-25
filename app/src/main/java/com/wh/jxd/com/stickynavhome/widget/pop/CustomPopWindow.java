@@ -8,6 +8,7 @@ import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.PopupWindow;
 
 
@@ -113,9 +114,10 @@ public class CustomPopWindow {
         if (mPopupWindow != null) {
             mPopupWindow.dismiss();
         }
+        if (mOnDismissListener != null) {
+            mOnDismissListener.onDismiss();
+        }
     }
-
-
     /**
      * build方法返回一个PopWindow
      */
@@ -125,7 +127,7 @@ public class CustomPopWindow {
         }
         if (mWidth != 0 && mHeight != 0) {
             mPopupWindow = new PopupWindow(mContentView, mWidth, mHeight);
-        } else {
+        }  else {
             mPopupWindow = new PopupWindow(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
         if (mAnimationStyle != -1) {
@@ -134,16 +136,18 @@ public class CustomPopWindow {
         apply(mPopupWindow);
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mPopupWindow.setOutsideTouchable(mIsOutside);
-        if (mWidth==0||mHeight==0){
+        if (mWidth == 0 || mHeight == 0) {
+            mPopupWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+            //设置窗体的高度
+            mPopupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
             mPopupWindow.getContentView().measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-           //如果外界没有设置宽高
-            mWidth=mPopupWindow.getContentView().getMeasuredWidth();
-            mHeight=mPopupWindow.getContentView().getMeasuredHeight();
+            //如果外界没有设置宽高
+            mWidth = mPopupWindow.getContentView().getMeasuredWidth();
+            mHeight = mPopupWindow.getContentView().getMeasuredHeight();
         }
         mPopupWindow.update();
         return mPopupWindow;
     }
-
     /**
      * 设置Pop的一些属性
      *

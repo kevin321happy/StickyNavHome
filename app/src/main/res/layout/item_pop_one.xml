@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_itemone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="300px"
+        android:paddingTop="@dimen/px_space_20"
+        android:paddingBottom="@dimen/px_space_20"
+        android:layout_marginLeft="@dimen/px_space_30"
+        android:textSize="@dimen/px_space_42"
+        android:textColor="@color/text__defaulttext"
+        android:text="教练技术"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="1px"/>
+    <ImageView
+        android:id="@+id/iv_gouxuan"
+        android:layout_gravity="center_vertical"
+        android:layout_width="@dimen/px_space_40"
+        android:layout_marginRight="@dimen/px_space_20"
+        android:layout_height="@dimen/px_space_40"
+        android:src="@drawable/gouxuan"
+        />
+</LinearLayout>

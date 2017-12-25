@@ -78,7 +78,7 @@ public abstract class BaseActivtiy extends AutoLayoutActivity  {
         if (mToolbarTitle != null) {
             //getTitle()的值是activity的android:lable属性值
             mToolbarTitle.setText(getTitle());
-            //设置默认的标题不显示
+            //设置默认的标题不显示，
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
         if (mToolbarSubTitle != null) {
@@ -220,7 +220,6 @@ public abstract class BaseActivtiy extends AutoLayoutActivity  {
 
     /**
      * 获得toolbar
-     *
      * @return
      */
     public Toolbar getToolBar() {
