@@ -69,6 +69,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
                 mRcv_pop.setAdapter(new PoponeAdapter());
                 mCustomPopWindow = new CustomPopWindow.Builder(this)
                         .setView(listPopView)
+                        .setAnimationStyle(R.style.AnimUp)
                         .size(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT)
                         .setOnDismissListener(new PopupWindow.OnDismissListener() {
                             @Override
@@ -78,9 +79,6 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
                         })
                         .creat();
                 mCustomPopWindow.showAtLocation(mToolBar,Gravity.CENTER,0,0);
-
-
-
                 break;
             case R.id.bt2:
                 break;

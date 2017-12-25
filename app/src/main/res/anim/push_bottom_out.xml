@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?><!-- 上下滑入式 -->
 <set xmlns:android="http://schemas.android.com/apk/res/android">
-    <translate
-        android:duration="200"
-        android:fromYDelta="0"
-        android:toYDelta="50%p" />
+
+
+    <!--透明动画-->
+
+    <alpha android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:startOffset="500"
+        android:duration="500"
+        />
+
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="+360"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="500"
+        />
+
+    <scale
+        android:fromXScale="1.0"
+        android:toXScale="0.0"
+        android:fromYScale="1.0"
+        android:toYScale="0.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="500"
+        />
+
+
 </set>

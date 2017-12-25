@@ -3,8 +3,15 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <translate
-        android:duration="200"
-        android:fromYDelta="50%p"
+        android:duration="300"
+        android:fromYDelta="-30%p"
         android:toYDelta="0" />
+
+    <!--<alpha android:fromAlpha="0.8"-->
+        <!--android:toAlpha="1.0"-->
+        <!--android:startOffset="500"-->
+        <!--android:duration="200"-->
+        <!--/>-->
+
 
 </set>
