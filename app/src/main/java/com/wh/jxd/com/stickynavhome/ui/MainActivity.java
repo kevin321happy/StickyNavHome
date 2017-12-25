@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         initView();
         initDatas();
     }
-
-
     private void initDatas() {
         mIndicator.setTitles(mTitles);
         mIndicator.setmViewPager(mViewPager, 0);
@@ -90,12 +88,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         status_bar.setAlpha(0);
         sticky_layout.setMonScrollListener(this);
 
-
-
-
         initRecycle();
-
-
     }
 
     private void initRecycle() {

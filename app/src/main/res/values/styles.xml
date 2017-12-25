@@ -19,4 +19,25 @@
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
     </style>
 
+    <!--多选标签的样式-->
+    <style name="MultiLineChooseItemTags">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="item_backgroundColor">#FFFFFF</item>
+        <item name="item_selectedTextColor">#FFFFFF</item>
+        <item name="item_selectedBackgroundColor">#49C120</item>
+        <item name="item_textSize">13sp</item>
+        <item name="item_horizontalSpacing">5dp</item>
+        <item name="item_verticalSpacing">5dp</item>
+        <item name="item_horizontalPadding">12dp</item>
+        <item name="item_verticalPadding">3dp</item>
+        <item name="item_radius">5dp</item>
+        <item name="item_selectedStrokeColor">#49C120</item>
+        <item name="item_strokeWidth">1px</item>
+        <item name="item_multiChooseable">true</item>
+        <item name="item_singleLine">true</item>
+        <item name="item_width">100</item>
+        <item name="item_height">40</item>
+    </style>
+
 </resources>
