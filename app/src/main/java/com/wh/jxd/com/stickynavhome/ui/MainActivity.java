@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
     @Override
     public void onScrolling(float precent) {
         Toast.makeText(this, "回调出来的透明度：" + precent, Toast.LENGTH_SHORT).show();
-//        ToastUtils.show("回调出来的透明度：" + precent);
         float offset = 1 - precent / 1000;
         if (0 == offset) {
             toolbar.setAlpha(1);

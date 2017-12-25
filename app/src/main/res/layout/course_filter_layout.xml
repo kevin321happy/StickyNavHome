@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="@dimen/px_space_120"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_30"
+        android:background="@color/green_dan" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/px_space_30"
+        android:text="任务状态(可多选)" />
+
+    <com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout
+        android:id="@+id/multi_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/px_space_30" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_space_30"
+            android:background="@color/green_dan" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/px_space_30"
+        android:text="学习状态(可多选)" />
+
+    <com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout
+        android:id="@+id/multi_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/px_space_30" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_space_30"
+            android:background="@color/green_dan" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/px_space_30"
+        android:text="学习状态(可多选)" />
+
+    <com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout
+        android:id="@+id/multi_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MultiLineChooseItemTags1"
+        android:layout_margin="@dimen/px_space_30" />
+    <Button
+        android:id="@+id/bt_confirm"
+        android:layout_gravity="center_horizontal"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px_space_40"
+        android:layout_width="@dimen/px_space_250"
+        android:background="@drawable/bg_button"
+        android:layout_height="@dimen/px_space_100"
+        android:layout_marginBottom="@dimen/px_space_40"/>
+
+    </LinearLayout>
+    <View
+        android:id="@+id/mask1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/transparent_black_55"/>
+
+
+
+</LinearLayout>

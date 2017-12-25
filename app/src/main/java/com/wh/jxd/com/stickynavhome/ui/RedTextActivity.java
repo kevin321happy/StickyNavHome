@@ -8,12 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.wh.jxd.com.stickynavhome.BaseActivtiy;
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout;
 import com.wh.jxd.com.stickynavhome.widget.pop.CustomPopWindow;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kevin321vip on 2017/12/21.
@@ -30,6 +35,17 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
     private TextView mTop_view;
     private View mMask;
     private CustomPopWindow mCustomPopWindow;
+    private CustomPopWindow mCustomPopWindow1;
+    private View mListPopView;
+    private View mCourseFilterView;
+    private MultiLineChooseLayout mMulti_one;
+    private MultiLineChooseLayout mMulti_two;
+    private MultiLineChooseLayout mMulti_three;
+    private View mMask1;
+    private List<String> mListOne = new ArrayList<>();
+    private List<String> mListTwo = new ArrayList<>();
+    private List<String> mListThree = new ArrayList<>();
+    private Button mBt_confirm;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +59,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
 
     @Override
     protected void initView() {
+        initData();
         setToolBarTitle("测试界面");
         showBack();
         mToolBar = getToolBar();
@@ -57,40 +74,130 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
         mBt_four.setOnClickListener(this);
     }
 
+    /**
+     * 初始化筛选的数据
+     */
+    private void initData() {
+        mListOne.add("全部");
+        mListOne.add("必修");
+        mListOne.add("选修");
+
+        mListTwo.add("全部");
+        mListTwo.add("未学习");
+        mListTwo.add("学习中");
+        mListTwo.add("已完成");
+
+        mListThree.add("全部");
+        mListThree.add("不含考试");
+        mListThree.add("考试未通过");
+        mListThree.add("未考试");
+        mListThree.add("考试通过");
+
+
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt1:
-                View listPopView=View.inflate(this,R.layout.layout_list_pop,null);
-                mMask = listPopView.findViewById(R.id.mask);
-                mMask.setOnClickListener(this);
-                mRcv_pop = (RecyclerView) listPopView.findViewById(R.id.rcv);
-                mRcv_pop.setLayoutManager(new LinearLayoutManager(this));
-                mRcv_pop.setAdapter(new PoponeAdapter());
-                mCustomPopWindow = new CustomPopWindow.Builder(this)
-                        .setView(listPopView)
-                        .setAnimationStyle(R.style.AnimUp)
-                        .size(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT)
-                        .setOnDismissListener(new PopupWindow.OnDismissListener() {
-                            @Override
-                            public void onDismiss() {
-
-                            }
-                        })
-                        .creat();
-                mCustomPopWindow.showAtLocation(mToolBar,Gravity.CENTER,0,0);
+                //显示分类的弹窗
+                showclazzPop();
                 break;
             case R.id.bt2:
+                //显示筛选的弹窗
+                showFilterPop();
                 break;
             case R.id.bt3:
                 break;
             case R.id.bt4:
                 break;
             case R.id.mask:
-                if (mCustomPopWindow!=null){
+                if (mCustomPopWindow != null) {
                     mCustomPopWindow.dismiss();
                 }
                 break;
+            case R.id.mask1:
+                if (mCustomPopWindow1 != null) {
+                    mCustomPopWindow1.dismiss();
+                }
+                break;
+            case R.id.bt_confirm:
+                if (mCustomPopWindow1 != null) {
+                    mCustomPopWindow1.dismiss();
+                }
+                break;
+        }
+    }
+
+    /**
+     * 显示筛选的弹窗
+     */
+    private void showFilterPop() {
+        if (mCustomPopWindow1 == null) {
+            mCourseFilterView = View.inflate(this, R.layout.course_filter_layout, null);
+            mMulti_one = (MultiLineChooseLayout) mCourseFilterView.findViewById(R.id.multi_one);
+            mMulti_two = (MultiLineChooseLayout) mCourseFilterView.findViewById(R.id.multi_two);
+            mMulti_three = (MultiLineChooseLayout) mCourseFilterView.findViewById(R.id.multi_three);
+            mBt_confirm = (Button) mCourseFilterView.findViewById(R.id.bt_confirm);
+            setMultiData();
+            mMask1 = mCourseFilterView.findViewById(R.id.mask1);
+            mBt_confirm.setOnClickListener(this);
+            mMask1.setOnClickListener(this);
+
+            mCustomPopWindow1= new CustomPopWindow.Builder(this)
+                    .size(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    .setView(mCourseFilterView)
+                    .setAnimationStyle(R.style.AnimUp)
+                    .setFocusable(true)
+                    .creat();
+            mCustomPopWindow1.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
+
+
+        } else {
+            mCustomPopWindow1.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
+        }
+    }
+    /**
+     * 设置Multi布局的数据
+     */
+    private void setMultiData() {
+        mMulti_one.setList(mListOne);
+        mMulti_one.setIndexItemSelected(1);
+        mMulti_two.setList(mListTwo);
+        mMulti_two.setIndexItemSelected(0);
+        mMulti_three.setList(mListThree);
+        mMulti_three.setIndexItemSelected(2);
+        //设置条目点击事件
+//        mMulti_one.setOnItemClickListener();
+//        mMulti_one.setOnItemClickListener();
+//        mMulti_one.setOnItemClickListener();
+    }
+
+    /**
+     * 显示分类的弹窗
+     */
+    private void showclazzPop() {
+        if (mCustomPopWindow == null) {
+            mListPopView = View.inflate(this, R.layout.layout_list_pop, null);
+            mMask = mListPopView.findViewById(R.id.mask);
+            mMask.setOnClickListener(this);
+            mRcv_pop = (RecyclerView) mListPopView.findViewById(R.id.rcv);
+            mRcv_pop.setLayoutManager(new LinearLayoutManager(this));
+            mRcv_pop.setAdapter(new PoponeAdapter());
+            mCustomPopWindow = new CustomPopWindow.Builder(this)
+                    .setView(mListPopView)
+                    .setAnimationStyle(R.style.AnimUp)
+                    .size(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT)
+                    .setOnDismissListener(new PopupWindow.OnDismissListener() {
+                        @Override
+                        public void onDismiss() {
+
+                        }
+                    })
+                    .creat();
+            mCustomPopWindow.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
+        } else {
+            mCustomPopWindow.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
         }
     }
 }
