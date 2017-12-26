@@ -11,8 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
-import com.fips.huashun.R;
-
+import com.wh.jxd.com.stickynavhome.R;
 
 /**
  * Created by Sai on 15/11/22.
@@ -37,12 +36,10 @@ public class BasePickerView {
 
     public BasePickerView(Context context){
         this.context = context;
-
         initViews();
         init();
         initEvents();
     }
-
     protected void initViews(){
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         decorView = (ViewGroup) ((Activity)context).getWindow().getDecorView().findViewById(android.R.id.content);
@@ -98,7 +95,6 @@ public class BasePickerView {
             public void onAnimationStart(Animation animation) {
 
             }
-
             @Override
             public void onAnimationEnd(Animation animation) {
                 decorView.post(new Runnable() {
@@ -113,7 +109,6 @@ public class BasePickerView {
                     }
                 });
             }
-
             @Override
             public void onAnimationRepeat(Animation animation) {
 

@@ -13,7 +13,8 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.fips.huashun.R;
+
+import com.wh.jxd.com.stickynavhome.R;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -59,9 +60,8 @@ public class WheelView extends View {
     int dividerColor;
 
     // 条目间距倍数
-    static final float lineSpacingMultiplier = 1.4F;
+    static final float lineSpacingMultiplier = 3.5F;
     boolean isLoop;
-
     // 第一条线Y坐标值
     float firstLineY;
     //第二条线Y坐标
@@ -80,7 +80,7 @@ public class WheelView extends View {
     int change;
 
     // 显示几个条目
-    int itemsVisible = 11;
+    int itemsVisible = 7;
 
     int measuredHeight;
     int measuredWidth;
@@ -89,7 +89,6 @@ public class WheelView extends View {
     int halfCircumference;
     // 半径
     int radius;
-
     private int mOffset = 0;
     private float previousY = 0;
     long startTime = 0;
@@ -133,16 +132,11 @@ public class WheelView extends View {
         handler = new MessageHandler(this);
         gestureDetector = new GestureDetector(context, new LoopViewGestureListener(this));
         gestureDetector.setIsLongpressEnabled(false);
-
         isLoop = true;
-
         totalScrollY = 0;
         initPosition = -1;
-
         initPaints();
-
     }
-
     private void initPaints() {
         paintOuterText = new Paint();
         paintOuterText.setColor(textColorOut);
@@ -421,7 +415,6 @@ public class WheelView extends View {
             counter++;
         }
     }
-
     //递归计算出对应的index
     private int getLoopMappingIndex(int index){
         if(index < 0){

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/px_space_600"
+    android:layout_height="match_parent"
+    xmlns:wheelview="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bg_shape_live_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_space_30"
+        android:layout_marginTop="@dimen/px_space_40"
+        android:gravity="center_horizontal"
+        android:text="请选择历史问卷"
+        android:textSize="@dimen/px_space_45" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_1"
+        android:background="@color/color_999" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/px_space_60"
+        android:layout_marginBottom="@dimen/px_space_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.wh.jxd.com.stickynavhome.widget.pickerview.WheelView
+            android:id="@+id/number_pick"
+            wheelview:textSize="40px"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/px_space_40"
+            android:layout_marginRight="@dimen/px_space_40"
+            android:layout_weight="3" />
+
+        <!--<com.wh.jxd.com.stickynavhome.widget.pickerview.WheelView-->
+            <!--android:id="@+id/number_pick1"-->
+            <!--android:layout_width="0dp"-->
+            <!--wheelview:textSize="40px"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/px_space_40"-->
+            <!--android:layout_weight="2" />-->
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/px_space_40"
+        android:background="@drawable/bg_button"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px_space_40" />
+</LinearLayout>

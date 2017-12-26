@@ -62,5 +62,40 @@
     </declare-styleable>
 
 
+    <!--数值选择器-->
+    <attr name="numberPickerStyle" format="reference"/>
+    <declare-styleable name="NumberPicker">
+        <attr name="np_width" format="dimension"/>
+        <attr name="np_height" format="dimension"/>
+        <attr name="np_dividerColor" format="color"/>
+        <attr name="np_dividerDistance" format="dimension"/>
+        <attr name="np_dividerThickness" format="dimension"/>
+        <attr name="np_formatter" format="string"/>
+        <attr name="np_max" format="integer"/>
+        <attr name="np_min" format="integer"/>
+        <attr name="np_orientation" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="np_textColor" format="color"/>
+        <attr name="np_textSize" format="dimension"/>
+        <attr name="np_typeface" format="string"/>
+        <attr name="np_wheelItemCount" format="integer"/>
+        <attr name="np_wrapSelectorWheel" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="wheelview">
+        <attr name="gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColorOut" format="color"/>
+        <attr name="textColorCenter" format="color"/>
+        <attr name="dividerColor" format="color"/>
+    </declare-styleable>
+
+
 
 </resources>

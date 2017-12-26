@@ -2,7 +2,8 @@ package com.wh.jxd.com.stickynavhome.widget.pickerview;
 
 import android.view.View;
 
-import com.fips.huashun.R;
+
+import com.wh.jxd.com.stickynavhome.R;
 
 import java.util.ArrayList;
 
@@ -52,24 +53,28 @@ public class WheelOptions<T> {
 		this.mOptions2Items = options2Items;
 		this.mOptions3Items = options3Items;
 		int len = ArrayWheelAdapter.DEFAULT_LENGTH;
-		if (this.mOptions3Items == null)
+		if (this.mOptions3Items == null) {
 			len = 8;
-		if (this.mOptions2Items == null)
+		}
+		if (this.mOptions2Items == null) {
 			len = 12;
+		}
 		// 选项1
 		wv_option1 = (WheelView) view.findViewById(R.id.options1);
 		wv_option1.setAdapter(new ArrayWheelAdapter(mOptions1Items, len));// 设置显示数据
 		wv_option1.setCurrentItem(0);// 初始化时显示的数据
 		// 选项2
 		wv_option2 = (WheelView) view.findViewById(R.id.options2);
-		if (mOptions2Items != null)
+		if (mOptions2Items != null) {
 			wv_option2.setAdapter(new ArrayWheelAdapter(mOptions2Items.get(0)));// 设置显示数据
+		}
 		wv_option2.setCurrentItem(wv_option1.getCurrentItem());// 初始化时显示的数据
 		// 选项3
 		wv_option3 = (WheelView) view.findViewById(R.id.options3);
-		if (mOptions3Items != null)
+		if (mOptions3Items != null) {
 			wv_option3.setAdapter(new ArrayWheelAdapter(mOptions3Items.get(0)
 					.get(0)));// 设置显示数据
+		}
 		wv_option3.setCurrentItem(wv_option3.getCurrentItem());// 初始化时显示的数据
 
 		int textSize = 25;
@@ -78,10 +83,12 @@ public class WheelOptions<T> {
 		wv_option2.setTextSize(textSize);
 		wv_option3.setTextSize(textSize);
 
-		if (this.mOptions2Items == null)
+		if (this.mOptions2Items == null) {
 			wv_option2.setVisibility(View.GONE);
-		if (this.mOptions3Items == null)
+		}
+		if (this.mOptions3Items == null) {
 			wv_option3.setVisibility(View.GONE);
+		}
 
 		// 联动监听器
         wheelListener_option1 = new OnItemSelectedListener() {
@@ -104,7 +111,6 @@ public class WheelOptions<T> {
 			}
 		};
         wheelListener_option2 = new OnItemSelectedListener() {
-
 			@Override
 			public void onItemSelected(int index) {
 				if (mOptions3Items != null) {
@@ -114,7 +120,6 @@ public class WheelOptions<T> {
 					int opt3 = wv_option3.getCurrentItem();//上一个opt3的选中位置
                     //新opt3的位置，判断如果旧位置没有超过数据范围，则沿用旧位置，否则选中最后一项
                     opt3 = opt3 >= mOptions3Items.get(opt1Select).get(index).size() - 1 ? mOptions3Items.get(opt1Select).get(index).size() - 1 : opt3;
-
 					wv_option3.setAdapter(new ArrayWheelAdapter(mOptions3Items
 							.get(wv_option1.getCurrentItem()).get(
                                     index)));
@@ -125,10 +130,12 @@ public class WheelOptions<T> {
 		};
 
 //		// 添加联动监听
-		if (options2Items != null && linkage)
+		if (options2Items != null && linkage) {
 			wv_option1.setOnItemSelectedListener(wheelListener_option1);
-		if (options3Items != null && linkage)
+		}
+		if (options3Items != null && linkage) {
 			wv_option2.setOnItemSelectedListener(wheelListener_option2);
+		}
 	}
 
 	/**
@@ -139,12 +146,15 @@ public class WheelOptions<T> {
 	 * @param label3
 	 */
 	public void setLabels(String label1, String label2, String label3) {
-		if (label1 != null)
+		if (label1 != null) {
 			wv_option1.setLabel(label1);
-		if (label2 != null)
+		}
+		if (label2 != null) {
 			wv_option2.setLabel(label2);
-		if (label3 != null)
+		}
+		if (label3 != null) {
 			wv_option3.setLabel(label3);
+		}
 	}
 
 	/**

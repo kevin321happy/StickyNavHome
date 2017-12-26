@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import com.wh.jxd.com.stickynavhome.BaseActivtiy;
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.bean.PagerBean;
 import com.wh.jxd.com.stickynavhome.ui.adapter.PoponeAdapter;
+import com.wh.jxd.com.stickynavhome.widget.dialog.ChoosePagerDialog;
 import com.wh.jxd.com.stickynavhome.widget.dialog.CreatLiveDialog;
 import com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout;
 import com.wh.jxd.com.stickynavhome.widget.pop.CustomPopWindow;
@@ -50,6 +52,8 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
     private List<String> mListThree = new ArrayList<>();
     private Button mBt_confirm;
     private CreatLiveDialog mLiveDialog;
+    private ChoosePagerDialog mPagerDialog;
+    private List<PagerBean> mPagerBeans = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,7 +100,17 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
         mListThree.add("考试未通过");
         mListThree.add("未考试");
         mListThree.add("考试通过");
+
+
+        mPagerBeans.add(new PagerBean("销售培训班"+"2017-12-8", "2017-12-8"));
+        mPagerBeans.add(new PagerBean("企业满意度调查模板"+"2017-12-6", "2017-12-6"));
+        mPagerBeans.add(new PagerBean("员工幸福调查模板"+"2017-12-7", "2017-12-7"));
+        mPagerBeans.add(new PagerBean("销售培训班"+"2017-12-7", "2017-12-7"));
+        mPagerBeans.add(new PagerBean("员工幸福度调查"+"2017-12-9", "2017-12-9"));
+        mPagerBeans.add(new PagerBean("企业经营理念"+"2017-12-10", "2017-12-10"));
+
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -119,6 +133,9 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
                 });
                 break;
             case R.id.bt4:
+                mPagerDialog = new ChoosePagerDialog(this);
+                mPagerDialog.setPagerBeans(mPagerBeans);
+                mPagerDialog.show();
                 break;
             case R.id.mask:
                 if (mCustomPopWindow != null) {
@@ -153,7 +170,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
             mBt_confirm.setOnClickListener(this);
             mMask1.setOnClickListener(this);
 
-            mCustomPopWindow1= new CustomPopWindow.Builder(this)
+            mCustomPopWindow1 = new CustomPopWindow.Builder(this)
                     .size(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                     .setView(mCourseFilterView)
                     .setAnimationStyle(R.style.AnimUp)
@@ -166,6 +183,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
             mCustomPopWindow1.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
         }
     }
+
     /**
      * 设置Multi布局的数据
      */

@@ -2,7 +2,7 @@ package com.wh.jxd.com.stickynavhome.widget.pickerview;
 
 import android.view.Gravity;
 
-import com.fips.huashun.R;
+import com.wh.jxd.com.stickynavhome.R;
 
 
 /**
