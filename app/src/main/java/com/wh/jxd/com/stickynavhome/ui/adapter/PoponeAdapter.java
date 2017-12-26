@@ -1,4 +1,4 @@
-package com.wh.jxd.com.stickynavhome.ui;
+package com.wh.jxd.com.stickynavhome.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;

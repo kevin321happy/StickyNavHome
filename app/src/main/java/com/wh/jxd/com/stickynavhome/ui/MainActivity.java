@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.ui.adapter.CourseClassAdapter;
 import com.wh.jxd.com.stickynavhome.utils.StatusBarUtil;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.CustomViewPagerIndicator;
 import com.wh.jxd.com.stickynavhome.widget.stickynavLayout.StickyNavLayout;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         rcv_course.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
         CourseClassAdapter classAdapter = new CourseClassAdapter();
         rcv_course.setAdapter(classAdapter);
+
     }
 
     /**

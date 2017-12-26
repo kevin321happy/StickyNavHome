@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wh.jxd.com.stickynavhome.BaseActivtiy;
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.ui.adapter.PoponeAdapter;
+import com.wh.jxd.com.stickynavhome.widget.dialog.CreatLiveDialog;
 import com.wh.jxd.com.stickynavhome.widget.multichoose.MultiLineChooseLayout;
 import com.wh.jxd.com.stickynavhome.widget.pop.CustomPopWindow;
 
@@ -46,6 +49,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
     private List<String> mListTwo = new ArrayList<>();
     private List<String> mListThree = new ArrayList<>();
     private Button mBt_confirm;
+    private CreatLiveDialog mLiveDialog;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,10 +96,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
         mListThree.add("考试未通过");
         mListThree.add("未考试");
         mListThree.add("考试通过");
-
-
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -108,6 +109,14 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
                 showFilterPop();
                 break;
             case R.id.bt3:
+                mLiveDialog = new CreatLiveDialog(this);
+                mLiveDialog.show();
+                mLiveDialog.setOnDialogClickListener(new CreatLiveDialog.onDialogClickListener() {
+                    @Override
+                    public void onConfirmClick(int position) {
+                        Toast.makeText(RedTextActivity.this, "当前选中的位置为：" + position, Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
             case R.id.bt4:
                 break;

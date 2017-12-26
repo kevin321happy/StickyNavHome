@@ -1,4 +1,4 @@
-package com.wh.jxd.com.stickynavhome.ui;
+package com.wh.jxd.com.stickynavhome.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,7 +14,7 @@ import com.wh.jxd.com.stickynavhome.widget.CircleImageView;
  * 课程分类的adapter
  */
 
-class CourseClassAdapter extends RecyclerView.Adapter {
+ public  class CourseClassAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View item = View.inflate(parent.getContext(), R.layout.course_class_item, null);

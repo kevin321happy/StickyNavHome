@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.ui.adapter.StickyAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

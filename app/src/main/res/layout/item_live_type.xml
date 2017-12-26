@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/ll_item"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/px_space_30"
+    android:paddingBottom="@dimen/px_space_30"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+
+    >
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_marginLeft="@dimen/px_space_30"
+        android:layout_width="@dimen/px_space_250"
+        android:text="1V1课堂"
+        android:textSize="@dimen/px_space_45"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_marginLeft="@dimen/px_space_30"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="@dimen/px_space_40"
+        android:text="(1个学员,双向语音)"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:layout_marginRight="@dimen/px_space_20"
             android:background="@drawable/bg_button"
-            android:text="弹窗3" />
+            android:text="直播类型" />
 
         <Button
             android:id="@+id/bt4"
