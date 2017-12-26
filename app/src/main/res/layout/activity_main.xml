@@ -95,11 +95,15 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <ImageView
+            <TextView
                 android:id="@+id/iv_study_info"
                 android:layout_width="match_parent"
                 android:layout_height="400px"
                 android:layout_below="@+id/ll_one"
+                android:textColor="@color/title_red"
+                android:textSize="@dimen/px_space_50"
+                android:gravity="center"
+                android:text="点击跳转到测试VIew效果的界面"
                 android:background="@drawable/bg_study_info" />
 
             <View

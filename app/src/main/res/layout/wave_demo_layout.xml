@@ -59,7 +59,7 @@
             android:background="@drawable/bg_button"
             android:layout_marginRight="@dimen/px_space_10"
             android:layout_weight="1"
-            android:text="弹窗4" />
+            android:text="选择试卷" />
         </LinearLayout>
 
 

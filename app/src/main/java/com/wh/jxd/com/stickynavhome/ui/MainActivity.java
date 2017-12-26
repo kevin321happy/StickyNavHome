@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wh.jxd.com.stickynavhome.R;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
     private RelativeLayout topView;
     private ImageView tv_image;
     private RecyclerView rcv_course;
-    private ImageView study_info;
+    private TextView study_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         tv_image = (ImageView) findViewById(R.id.bg_image);
         rcv_course = (RecyclerView) findViewById(R.id.rcv_course);
-        study_info = (ImageView) findViewById(R.id.iv_study_info);
+        study_info = (TextView) findViewById(R.id.iv_study_info);
         study_info.setOnClickListener(this);
         status_bar = findViewById(R.id.status_bar);
         status_bar.setAlpha(0);
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(this, RedTextActivity.class);
+        Intent intent = new Intent(this, TestViewActivity.class);
         startActivity(intent);
     }
 }

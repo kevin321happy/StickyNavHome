@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.RedTextActivity"/>
+        <activity android:name=".ui.TestViewActivity"/>
     </application>
 
 </manifest>

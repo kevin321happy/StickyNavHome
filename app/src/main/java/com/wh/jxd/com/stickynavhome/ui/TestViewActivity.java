@@ -30,7 +30,7 @@ import java.util.List;
  * 测试自定义控件效果的界面
  */
 
-public class RedTextActivity extends BaseActivtiy implements View.OnClickListener {
+public class TestViewActivity extends BaseActivtiy implements View.OnClickListener {
     private Toolbar mToolBar;
     private Button mBt_one;
     private Button mBt_two;
@@ -128,7 +128,7 @@ public class RedTextActivity extends BaseActivtiy implements View.OnClickListene
                 mLiveDialog.setOnDialogClickListener(new CreatLiveDialog.onDialogClickListener() {
                     @Override
                     public void onConfirmClick(int position) {
-                        Toast.makeText(RedTextActivity.this, "当前选中的位置为：" + position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TestViewActivity.this, "当前选中的位置为：" + position, Toast.LENGTH_SHORT).show();
                     }
                 });
                 break;
