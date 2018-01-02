@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_item"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="@dimen/px_space_100"
+        android:layout_height="@dimen/px_space_100"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_user" />
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_course_ware"
+        android:layout_marginBottom="@dimen/px_space_30"
+        android:layout_marginTop="@dimen/px_space_10"
+        android:text="有声课件"
+        android:textSize="@dimen/px_space_35"
+        />
+</LinearLayout>

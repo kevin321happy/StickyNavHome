@@ -133,15 +133,16 @@ public abstract class BaseActivtiy extends AutoLayoutActivity  {
     }
     /**
      * 设置头部标题
-     *
      * @param title
      */
     public void setToolBarTitle(CharSequence title) {
         if (mToolbarTitle != null) {
             mToolbarTitle.setText(title);
         } else {
-            getToolBar().setTitle(title);
-            setSupportActionBar(getToolBar());
+            if (getToolBar()!=null){
+                getToolBar().setTitle(title);
+                setSupportActionBar(getToolBar());
+            }
         }
     }
     /**

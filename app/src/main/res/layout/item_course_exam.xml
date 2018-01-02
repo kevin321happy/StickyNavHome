@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px_space_30"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px_space_30"
+            android:layout_marginRight="@dimen/px_space_30"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_cousr_exam_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20分钟学会结构思维方法"
+                android:textColor="@color/text__defaulttext"
+                android:textSize="@dimen/px_space_40" />
+            <TextView
+                android:id="@+id/tv_course_exam_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px_space_40"
+                android:text="讲师: 裘马草堂"
+                android:textSize="@dimen/px_space_35" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_course_exma"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/px_space_250"
+            android:layout_marginRight="@dimen/px_space_20"
+            android:layout_weight="2"
+            android:scaleType="fitXY"
+            android:src="@drawable/mao" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_70"
+        android:layout_below="@+id/ll_top_layout"
+        android:layout_marginLeft="@dimen/px_space_20"
+        android:layout_marginRight="@dimen/px_space_20"
+        android:layout_marginTop="@dimen/px_space_20"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/px_space_30"
+            android:background="@drawable/bg_shape_tv_question_count"
+            android:paddingBottom="@dimen/px_space_3"
+            android:paddingLeft="@dimen/px_space_8"
+            android:paddingRight="@dimen/px_space_8"
+            android:paddingTop="@dimen/px_space_3"
+            android:text="进度:100%" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_shape_can_exam"
+            android:padding="@dimen/px_space_6"
+            android:text="开始考试" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_study_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9188学习"
+            android:textColor="@color/text__defaulttext"
+            android:textSize="@dimen/px_space_35" />
+
+        <TextView
+            android:id="@+id/tv_study_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px_space_20"
+            android:text="9188学习"
+            android:textColor="@color/text__defaulttext"
+            android:textSize="@dimen/px_space_35" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_indictor"
+        android:layout_width="@dimen/px_space_100"
+        android:layout_height="@dimen/px_space_6"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ll_buttom"
+        android:layout_marginRight="@dimen/px_space_20"
+        android:background="@color/theme_blue" />
+
+    <View
+        android:layout_below="@+id/view_indictor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_2"
+        android:layout_margin="@dimen/px_space_10"
+        android:background="@color/green_dan"/>
+
+
+</RelativeLayout>

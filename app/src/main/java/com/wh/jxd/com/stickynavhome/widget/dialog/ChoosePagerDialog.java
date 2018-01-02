@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wh.jxd.com.stickynavhome.R;
@@ -41,7 +42,16 @@ public class ChoosePagerDialog extends Dialog implements OnItemSelectedListener 
     private Button mBtn_confirm;
     private List<PagerBean> mPagerBeans;
     private WheelView mNumberPick1;
+    private String mTitle;
+    private TextView mTv_title;
 
+
+    public void setTitle(String title) {
+        mTitle = title;
+        if (mTv_title!=null){
+            mTv_title.setText(title);
+        }
+    }
 
     public List<PagerBean> getPagerBeans() {
         return mPagerBeans;
@@ -128,8 +138,8 @@ public class ChoosePagerDialog extends Dialog implements OnItemSelectedListener 
     private void initView() {
         View contentView = View.inflate(mContext, R.layout.choose_pager_dialog_layout, null);
         mNumberPicker = (WheelView) contentView.findViewById(R.id.number_pick);
-//        mNumberPick1 = (WheelView) contentView.findViewById(R.id.number_pick1);
         mBtn_confirm = (Button) contentView.findViewById(R.id.btn_confirm);
+        mTv_title = (TextView) contentView.findViewById(R.id.tv_title);
 
         mNumberPicker.setOnItemSelectedListener(this);
 
@@ -140,23 +150,6 @@ public class ChoosePagerDialog extends Dialog implements OnItemSelectedListener 
                 callDismiss();
             }
         });
-
-//        mNumberPick1.setAdapter(new WheelAdapter<String>() {
-//            @Override
-//            public int getItemsCount() {
-//                return mPagerBeans == null ? 0 : mPagerBeans.size();
-//            }
-//
-//            @Override
-//            public String getItem(int index) {
-//                return mPagerBeans == null ? null : mPagerBeans.get(index).getPagerTime();
-//            }
-//
-//            @Override
-//            public int indexOf(String o) {
-//                return 0;
-//            }
-//        });
         /**
          * 设置适配器
          */
@@ -184,13 +177,12 @@ public class ChoosePagerDialog extends Dialog implements OnItemSelectedListener 
 
         resizeDialog();
     }
-
     private void resizeDialog() {
         Window window = getWindow();
         window.setGravity(Gravity.CENTER_VERTICAL);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = (int) (DisplayUtil.getScreenSize(getContext()).x * 0.8);
-        attributes.height = (int) (DisplayUtil.getScreenSize(getContext()).y * 0.5);
+        attributes.height = (int) (DisplayUtil.getScreenSize(getContext()).y * 0.6);
         getWindow().setAttributes(attributes);
     }
 

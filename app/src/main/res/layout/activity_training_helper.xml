@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+    <TextView
+        android:layout_marginTop="@dimen/px_space_50"
+        android:layout_marginLeft="@dimen/px_space_50"
+        android:id="@+id/tv_traiin_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内训助手"
+        android:textColor="@color/text__defaulttext"
+        android:textSize="@dimen/px_space_60" />
+
+    <TextView
+        android:layout_marginLeft="@dimen/px_space_50"
+        android:id="@+id/tv_traiin_child_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_traiin_title"
+        android:layout_marginTop="@dimen/px_space_15"
+        android:text="企业培训助手"
+        android:textSize="@dimen/px_space_40" />
+    <View
+        android:layout_marginLeft="@dimen/px_space_50"
+        android:layout_width="@dimen/px_space_80"
+        android:layout_height="@dimen/px_space_6"
+        android:layout_below="@+id/tv_traiin_child_title"
+        android:layout_marginTop="@dimen/px_space_10"
+        android:background="@color/theme_blue" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_finish"
+        android:layout_marginBottom="@dimen/px_space_100"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_menu"
+            android:layout_marginLeft="@dimen/px_space_30"
+            android:layout_marginRight="@dimen/px_space_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/px_space_10"
+        android:layout_marginBottom="@dimen/px_space_20"
+        android:src="@drawable/ic_cha" />
+
+</RelativeLayout>

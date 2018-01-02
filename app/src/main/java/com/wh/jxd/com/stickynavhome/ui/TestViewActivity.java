@@ -1,7 +1,10 @@
 package com.wh.jxd.com.stickynavhome.ui;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 import com.wh.jxd.com.stickynavhome.BaseActivtiy;
 import com.wh.jxd.com.stickynavhome.R;
 import com.wh.jxd.com.stickynavhome.bean.PagerBean;
+import com.wh.jxd.com.stickynavhome.sample.widget.Horizontaldicator;
 import com.wh.jxd.com.stickynavhome.ui.adapter.PoponeAdapter;
 import com.wh.jxd.com.stickynavhome.widget.dialog.ChoosePagerDialog;
 import com.wh.jxd.com.stickynavhome.widget.dialog.CreatLiveDialog;
@@ -54,6 +58,9 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
     private CreatLiveDialog mLiveDialog;
     private ChoosePagerDialog mPagerDialog;
     private List<PagerBean> mPagerBeans = new ArrayList<>();
+    private Button mBtn_change;
+    private boolean mIsChoose;
+    private Horizontaldicator mHorizontaldicator;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +72,7 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
         return R.layout.wave_demo_layout;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void initView() {
         initData();
@@ -76,10 +84,15 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
         mBt_two = (Button) findViewById(R.id.bt2);
         mBt_three = (Button) findViewById(R.id.bt3);
         mBt_four = (Button) findViewById(R.id.bt4);
+        mBtn_change = (Button) findViewById(R.id.btn_change);
+
+        mHorizontaldicator = (Horizontaldicator) findViewById(R.id.horizontaldicator);
         mBt_one.setOnClickListener(this);
         mBt_two.setOnClickListener(this);
         mBt_three.setOnClickListener(this);
         mBt_four.setOnClickListener(this);
+        mBtn_change.setOnClickListener(this);
+        mHorizontaldicator.initIndicator(2);
     }
 
     /**
@@ -102,15 +115,16 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
         mListThree.add("考试通过");
 
 
-        mPagerBeans.add(new PagerBean("销售培训班"+"2017-12-8", "2017-12-8"));
-        mPagerBeans.add(new PagerBean("企业满意度调查模板"+"2017-12-6", "2017-12-6"));
-        mPagerBeans.add(new PagerBean("员工幸福调查模板"+"2017-12-7", "2017-12-7"));
-        mPagerBeans.add(new PagerBean("销售培训班"+"2017-12-7", "2017-12-7"));
-        mPagerBeans.add(new PagerBean("员工幸福度调查"+"2017-12-9", "2017-12-9"));
-        mPagerBeans.add(new PagerBean("企业经营理念"+"2017-12-10", "2017-12-10"));
+        mPagerBeans.add(new PagerBean("销售培训班" + "2017-12-8", "2017-12-8"));
+        mPagerBeans.add(new PagerBean("企业满意度调查模板" + "2017-12-6", "2017-12-6"));
+        mPagerBeans.add(new PagerBean("员工幸福调查模板" + "2017-12-7", "2017-12-7"));
+        mPagerBeans.add(new PagerBean("销售培训班" + "2017-12-7", "2017-12-7"));
+        mPagerBeans.add(new PagerBean("员工幸福度调查" + "2017-12-9", "2017-12-9"));
+        mPagerBeans.add(new PagerBean("企业经营理念" + "2017-12-10", "2017-12-10"));
 
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -152,6 +166,14 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
                     mCustomPopWindow1.dismiss();
                 }
                 break;
+
+            case R.id.btn_change:
+                if (mHorizontaldicator != null) {
+                    int mChoosePosition = mIsChoose == true ? 0 : 1;
+                    mHorizontaldicator.setChoosePosition(mChoosePosition);
+                    mIsChoose = mIsChoose == true ? false : true;
+                }
+                break;
         }
     }
 
@@ -177,13 +199,10 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
                     .setFocusable(true)
                     .creat();
             mCustomPopWindow1.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
-
-
         } else {
             mCustomPopWindow1.showAtLocation(mToolBar, Gravity.CENTER, 0, 0);
         }
     }
-
     /**
      * 设置Multi布局的数据
      */
@@ -195,9 +214,6 @@ public class TestViewActivity extends BaseActivtiy implements View.OnClickListen
         mMulti_three.setList(mListThree);
         mMulti_three.setIndexItemSelected(2);
         //设置条目点击事件
-//        mMulti_one.setOnItemClickListener();
-//        mMulti_one.setOnItemClickListener();
-//        mMulti_one.setOnItemClickListener();
     }
 
     /**

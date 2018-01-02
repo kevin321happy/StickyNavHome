@@ -6,7 +6,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.bean.CommonMenuBean;
+import com.wh.jxd.com.stickynavhome.sample.widget.PageGridView;
 import com.wh.jxd.com.stickynavhome.widget.CircleImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -14,7 +19,14 @@ import com.wh.jxd.com.stickynavhome.widget.CircleImageView;
  * 课程分类的adapter
  */
 
- public  class CourseClassAdapter extends RecyclerView.Adapter {
+public class CourseClassAdapter extends PageGridView.PagingAdapter implements PageGridView.OnItemClickListener {
+
+    private List<CommonMenuBean> mMenuBeans = new ArrayList<>();
+
+    public void setMenuBeans(List<CommonMenuBean> menuBeans) {
+        mMenuBeans = menuBeans;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View item = View.inflate(parent.getContext(), R.layout.course_class_item, null);
@@ -23,14 +35,31 @@ import com.wh.jxd.com.stickynavhome.widget.CircleImageView;
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ViewHodler hodler = (ViewHodler) holder;
-        hodler.iv.setImageResource(R.drawable.ic_lyon);
-        hodler.tv.setText("裘马");
+        CommonMenuBean menuBean = mMenuBeans.get(position);
+        if (menuBean != null) {
+            ViewHodler hodler = (ViewHodler) holder;
+            hodler.iv.setImageResource(menuBean.getIv_image_res());
+            hodler.tv.setText(menuBean.getTv_menu_title());
+        }
+    }
+    @Override
+    public int getItemCount() {
+        return mMenuBeans.size();
     }
 
     @Override
-    public int getItemCount() {
-        return 6;
+    public void onItemClick(PageGridView pageGridView, int position) {
+
+    }
+
+    @Override
+    public List getData() {
+        return mMenuBeans;
+    }
+
+    @Override
+    public Object getEmpty() {
+        return null;
     }
 
     public class ViewHodler extends RecyclerView.ViewHolder {

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_one"
+            android:icon="@drawable/ic_dashboard"
+            android:title="自定义弹窗" />
+        <item
+            android:id="@+id/nav_two"
+            android:icon="@drawable/ic_event"
+            android:title="我的调研界面" />
+        <item
+            android:id="@+id/nav_three"
+            android:icon="@drawable/ic_headset"
+            android:title="我的考试界面" />
+        <item
+            android:id="@+id/nav_four"
+            android:icon="@drawable/ic_forum"
+            android:title="内训助手" />
+
+        <item
+            android:id="@+id/nav_five"
+            android:icon="@drawable/ic_forum"
+            android:title="企业活动" />
+        <item
+            android:id="@+id/nav_call_centry"
+            android:icon="@drawable/ic_dashboard"
+            android:title="呼叫中心" />
+        <item
+            android:id="@+id/nav_set_two_code"
+            android:icon="@drawable/ic_dashboard"
+            android:title="设置二维码" />
+
+    </group>
+    <item android:title="其他">
+        <menu>
+            <item
+                android:icon="@drawable/ic_dashboard"
+                android:title="去到首页" />
+        </menu>
+    </item>
+</menu>

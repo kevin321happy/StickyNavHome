@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_100"
+        android:orientation="horizontal">
+<TextView
+    android:id="@+id/tv_personal_exam_title"
+    android:layout_marginTop="@dimen/px_space_30"
+    android:layout_marginLeft="@dimen/px_space_30"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:text="人力资源考试"
+    android:textSize="@dimen/px_space_45"
+    android:textColor="@color/text__defaulttext"/>
+        <TextView
+            android:id="@+id/btn_exam"
+            android:layout_marginTop="@dimen/px_space_20"
+            android:layout_width="@dimen/px_space_180"
+            android:layout_height="@dimen/px_space_80"
+            android:gravity="center"
+            android:text="停止考试"
+            android:textSize="@dimen/px_space_30"
+            android:background="@drawable/bg_shape_cannot_exam"
+            android:layout_marginRight="@dimen/px_space_30"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/px_space_20"
+        android:layout_below="@+id/ll_top"
+        android:id="@+id/tv_personal_exam_time"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/px_space_30"
+        android:text="截止时间:2017-12-17 09:16"
+        android:layout_height="wrap_content" />
+
+<TextView
+    android:id="@+id/tv_question_count"
+    android:layout_marginLeft="@dimen/px_space_30"
+    android:layout_below="@+id/tv_personal_exam_time"
+    android:layout_width="wrap_content"
+    android:text="题目:100"
+    android:layout_marginTop="@dimen/px_space_40"
+    android:padding="@dimen/px_space_10"
+    android:textColor="@color/theme_blue"
+    android:background="@drawable/bg_shape_tv_question_count"
+    android:layout_height="wrap_content" />
+
+    <TextView
+
+        android:layout_marginLeft="@dimen/px_space_30"
+        android:layout_below="@+id/tv_personal_exam_time"
+        android:layout_toRightOf="@+id/tv_question_count"
+        android:layout_width="wrap_content"
+        android:text="题目:100"
+        android:layout_marginTop="@dimen/px_space_40"
+        android:padding="@dimen/px_space_10"
+        android:textColor="@color/title_red"
+        android:background="@drawable/bg_shape_tv_question_time"
+        android:layout_height="wrap_content" />
+
+    
+
+
+
+</RelativeLayout>

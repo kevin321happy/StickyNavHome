@@ -17,7 +17,7 @@ import com.wh.jxd.com.stickynavhome.utils.UiUtils;
 
 public class DynamicWave extends View {
     // 波纹颜色
-    private static final String WAVE_PAINT_COLOR = "#2EA7E0";
+    private static final String WAVE_PAINT_COLOR = "#50C2F8";
     // y = Asin(wx+b)+h
     private static final float STRETCH_FACTOR_A = 20;
     private static final int OFFSET_Y = 0;
@@ -66,12 +66,12 @@ public class DynamicWave extends View {
         for (int i = 0; i < mTotalWidth; i++) {
             // 减400只是为了控制波纹绘制的y的在屏幕的位置，大家可以改成一个变量，然后动态改变这个变量，从而形成波纹上升下降效果
             // 绘制第一条水波纹
-            canvas.drawLine(i, mTotalHeight - mResetOneYPositions[i] - 300, i,
+            canvas.drawLine(i, mTotalHeight - mResetOneYPositions[i] - 100, i,
                     mTotalHeight,
                     mWavePaint);
 
             // 绘制第二条水波纹
-            canvas.drawLine(i, mTotalHeight - mResetTwoYPositions[i] - 300, i,
+            canvas.drawLine(i, mTotalHeight - mResetTwoYPositions[i] - 100, i,
                     mTotalHeight,
                     mWavePaint);
         }

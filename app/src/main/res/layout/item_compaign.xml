@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/bg_shape_live_dialog"
+                  android:orientation="vertical"
+    >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/px_space_100"
+                      android:orientation="horizontal">
+            <View
+                    android:id="@+id/view_type"
+                    android:layout_width="@dimen/px_space_12" android:layout_height="match_parent"
+                  android:background="@color/title_red"/>
+            <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:layout_marginLeft="@dimen/px_space_30"
+                      android:gravity="bottom"
+                      android:layout_height="match_parent"
+                      android:text="人力资源考试"
+                      android:textSize="@dimen/px_space_45"/>
+
+            <TextView
+                    android:id="@+id/tv_apply"
+                    android:layout_width="wrap_content" android:layout_height="match_parent"
+                      android:text="点击参与"
+                      android:textColor="@color/title_red"
+                      android:textSize="@dimen/px_space_35"
+                      android:layout_marginRight="@dimen/px_space_15"
+                      android:gravity="bottom"/>
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/tv_questions_count"
+                android:layout_marginTop="@dimen/px_space_50"
+                android:layout_width="wrap_content"
+                android:text="题目数量是:100"
+                android:textSize="@dimen/px_space_35"
+                android:textColor="@color/text__defaulttext"
+                android:layout_marginLeft="@dimen/px_space_50"
+                  android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tv_end_time"
+                android:layout_marginTop="@dimen/px_space_20"
+                android:layout_width="wrap_content"
+                android:text="截止时间：2017年-09-14 15:00"
+                android:textSize="@dimen/px_space_33"
+                android:textColor="@color/color_666"
+                android:layout_marginLeft="@dimen/px_space_50"
+                android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_space_20"/>
+
+
+
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="@dimen/px_space_25"
+          android:background="@color/green_dan"/>
+
+</LinearLayout>

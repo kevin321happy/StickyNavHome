@@ -4,70 +4,87 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-    <include
-        layout="@layout/common_toolbar_layout" />
 
+    <include layout="@layout/common_toolbar_layout" />
 
 
     <LinearLayout
         android:id="@+id/ll_buttons"
-        android:layout_marginTop="140px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/px_space_10"
-        android:orientation="vertical">
+        android:layout_marginTop="140px"
+        android:orientation="vertical"
+        android:padding="@dimen/px_space_10">
+
         <TextView
             android:id="@+id/top_view"
             android:layout_width="match_parent"
             android:layout_height="1px" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-        <Button
-            android:id="@+id/bt1"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/px_space_90"
-            android:layout_weight="1"
-            android:layout_marginRight="@dimen/px_space_20"
-            android:layout_marginLeft="@dimen/px_space_10"
-            android:background="@drawable/bg_button"
-            android:text="课程分类" />
 
-        <Button
-            android:id="@+id/bt2"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/px_space_90"
-            android:layout_marginRight="@dimen/px_space_20"
-            android:background="@drawable/bg_button"
-            android:layout_weight="1"
-            android:text="课程筛选" />
+            <Button
+                android:id="@+id/bt1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px_space_90"
+                android:layout_marginLeft="@dimen/px_space_10"
+                android:layout_marginRight="@dimen/px_space_20"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="课程分类" />
 
-        <Button
-            android:id="@+id/bt3"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/px_space_90"
-            android:layout_weight="1"
-            android:layout_marginRight="@dimen/px_space_20"
-            android:background="@drawable/bg_button"
-            android:text="直播类型" />
+            <Button
+                android:id="@+id/bt2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px_space_90"
+                android:layout_marginRight="@dimen/px_space_20"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="课程筛选" />
 
-        <Button
-            android:id="@+id/bt4"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/px_space_90"
-            android:background="@drawable/bg_button"
-            android:layout_marginRight="@dimen/px_space_10"
-            android:layout_weight="1"
-            android:text="选择试卷" />
+            <Button
+                android:id="@+id/bt3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px_space_90"
+                android:layout_marginRight="@dimen/px_space_20"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="直播类型" />
+
+            <Button
+                android:id="@+id/bt4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px_space_90"
+                android:layout_marginRight="@dimen/px_space_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button"
+                android:text="选择试卷" />
         </LinearLayout>
 
-
     </LinearLayout>
+
+    <com.wh.jxd.com.stickynavhome.sample.widget.Horizontaldicator
+        android:id="@+id/horizontaldicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_60"
+        android:layout_below="@+id/ll_buttons"
+
+
+        android:gravity="center_horizontal" />
 
     <com.wh.jxd.com.stickynavhome.widget.DynamicWave
         android:layout_width="match_parent"
         android:layout_height="500px"
         android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontaldicator"
+        android:text="改变指示器" />
 
 </RelativeLayout>

@@ -7,10 +7,12 @@
     >
 <android.support.v7.widget.RecyclerView
     android:id="@+id/rcv"
-    android:layout_marginTop="@dimen/px_space_120"
+    android:layout_marginTop="@dimen/px_space_130"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/px_space_30"/>
+    android:background="@color/white"
+    android:paddingBottom="@dimen/px_space_40"
+    />
     <View
         android:id="@+id/mask"
         android:layout_width="match_parent"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar_layout" />
+
+    <ImageView
+        android:id="@+id/tv_code"
+        android:layout_width="@dimen/px_space_300"
+        android:layout_height="@dimen/px_space_300"
+        android:layout_marginTop="@dimen/px_space_50"
+        android:scaleType="fitXY"
+        android:src="@drawable/mao" />
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_110"
+        android:layout_marginLeft="@dimen/px_space_70"
+        android:layout_marginRight="@dimen/px_space_70"
+        android:layout_marginTop="@dimen/px_space_60"
+        android:background="@drawable/bg_button"
+        android:text="分享" />
+
+    <Button
+        android:id="@+id/btn_creat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_110"
+        android:layout_marginLeft="@dimen/px_space_70"
+        android:layout_marginRight="@dimen/px_space_70"
+        android:layout_marginTop="@dimen/px_space_60"
+        android:background="@drawable/bg_btn_change"
+        android:text="生成二维码" />
+
+
+    <TextView
+        android:layout_marginTop="@dimen/px_space_50"
+        android:id="@+id/tv_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/title_red" />
+
+
+</LinearLayout>
