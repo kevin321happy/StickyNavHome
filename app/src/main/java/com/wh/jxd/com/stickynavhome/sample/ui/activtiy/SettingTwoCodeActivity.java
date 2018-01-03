@@ -25,6 +25,7 @@ import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.wh.jxd.com.stickynavhome.BaseActivtiy;
 import com.wh.jxd.com.stickynavhome.R;
+import com.wh.jxd.com.stickynavhome.utils.ImageUtil;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -52,12 +53,12 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
     private Bitmap mAddLogo;
     private ImageView mIv_scan;
     private int REQUEST_CODE = 100;
-    private int REQUEST_IMAGE=200;
+    private int REQUEST_IMAGE = 200;
     /**
      * 请求CAMERA权限码
      */
     public static final int REQUEST_CAMERA_PERM = 101;
-    private TextView mTv_from_album;
+    private Button mTv_from_album;
 
     @Override
     protected int getLayoutId() {
@@ -72,14 +73,16 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
         mIv_code = (ImageView) findViewById(R.id.tv_code);
         mTv_path = (TextView) findViewById(R.id.tv_path);
         mIv_scan = (ImageView) findViewById(R.id.iv_scan);
-        mTv_from_album = (TextView) findViewById(R.id.tv_from_album);
-        
+        mTv_from_album = (Button) findViewById(R.id.btn_from_album);
+
         mIv_scan.setOnClickListener(this);
         mBtn_creaet.setOnClickListener(this);
         mBtn_share.setOnClickListener(this);
+        mTv_from_album.setOnClickListener(this);
         setToolBarTitle("设置二维码");
 
     }
+
     /**
      * 初始化权限事件
      */
@@ -93,8 +96,10 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
             ActivityCompat.requestPermissions(this, permissions, 100);
         }
     }
+
     /**
      * EsayPermissions接管权限处理逻辑
+     *
      * @param requestCode
      * @param permissions
      * @param grantResults
@@ -139,9 +144,22 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
             case R.id.iv_scan:
                 startScanning();
                 break;
+            case R.id.btn_from_album:
+                startScanningFromAblum();
+
+                break;
             default:
                 break;
         }
+    }
+    /**
+     * 开始从相册扫描
+     */
+    private void startScanningFromAblum() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, REQUEST_IMAGE);
     }
 
     /**
@@ -150,10 +168,6 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
     private void startScanning() {
         Intent intent = new Intent(SettingTwoCodeActivity.this, CaptureActivity.class);
         startActivityForResult(intent, REQUEST_CODE);
-//        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//        intent.addCategory(Intent.CATEGORY_OPENABLE);
-//        intent.setType("image/*");
-//        startActivityForResult(intent, REQUEST_IMAGE);
 
     }
 
@@ -191,7 +205,9 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//          // 处理二维码扫描结
+        /**
+         * 处理二维码扫描结果
+         */
         if (requestCode == REQUEST_CODE) {
             //处理扫描结果（在界面上显示）
             if (null != data) {
@@ -207,38 +223,37 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
                 }
             }
         }
-//        if (requestCode == REQUEST_IMAGE) {
-//            if (data != null) {
-//                Uri uri = data.getData();
-//                ContentResolver cr = getContentResolver();
-//                try {
-//                    Bitmap mBitmap = MediaStore.Images.Media.getBitmap(cr, uri);//显得到bitmap图片
-//                    CodeUtils.analyzeBitmap(String.valueOf(mBitmap), new CodeUtils.AnalyzeCallback() {
-//                        @Override
-//                        public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
-//                            Toast.makeText(SettingTwoCodeActivity.this, "解析结果:" + result, Toast.LENGTH_LONG).show();
-//                        }
-//
-//                        @Override
-//                        public void onAnalyzeFailed() {
-//                            Toast.makeText(SettingTwoCodeActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
-//                        }
-//                    });
-//
-//                    if (mBitmap != null) {
-//                        mBitmap.recycle();
-//                    }
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
 
-//        }
+        /**
+         * 选择系统图片并解析
+         */
+        else if (requestCode == REQUEST_IMAGE) {
+            if (data != null) {
+                Uri uri = data.getData();
+                try {
+                    CodeUtils.analyzeBitmap(ImageUtil.getImageAbsolutePath(this, uri), new CodeUtils.AnalyzeCallback() {
+                        @Override
+                        public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
+                            Toast.makeText(SettingTwoCodeActivity.this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void onAnalyzeFailed() {
+                            Toast.makeText(SettingTwoCodeActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (requestCode == REQUEST_CAMERA_PERM) {
+            Toast.makeText(this, "从设置页面返回...", Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 
     /**
      * 给二维码加一个LOGO
-     *
      * @param qrBitmap
      * @param logoBitmap
      * @return
@@ -262,7 +277,6 @@ public class SettingTwoCodeActivity extends BaseActivtiy implements View.OnClick
         canvas.restore();
         return blankBitmap;
     }
-
 
     /**
      * 讲BitMap对象存成文件

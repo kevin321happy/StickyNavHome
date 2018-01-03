@@ -33,6 +33,16 @@
         android:background="@drawable/bg_btn_change"
         android:text="生成二维码" />
 
+    <Button
+        android:id="@+id/btn_from_album"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_space_110"
+        android:layout_marginLeft="@dimen/px_space_70"
+        android:layout_marginRight="@dimen/px_space_70"
+        android:layout_marginTop="@dimen/px_space_60"
+        android:background="@drawable/bg_btn_change"
+        android:text="从相册扫描二维码" />
+
 
     <TextView
         android:layout_marginTop="@dimen/px_space_50"
@@ -50,13 +60,7 @@
         android:src="@drawable/ic_scan"/>
 
 
-    <TextView
-        android:layout_marginTop="@dimen/px_space_50"
-        android:id="@+id/tv_from_album"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/title_red" />
+
 
 
 
