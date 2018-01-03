@@ -5,9 +5,7 @@
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-
     <include layout="@layout/common_toolbar_layout" />
-
     <ImageView
         android:id="@+id/tv_code"
         android:layout_width="@dimen/px_space_300"
@@ -15,7 +13,6 @@
         android:layout_marginTop="@dimen/px_space_50"
         android:scaleType="fitXY"
         android:src="@drawable/mao" />
-
     <Button
         android:id="@+id/btn_share"
         android:layout_width="match_parent"
@@ -44,6 +41,23 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="@color/title_red" />
+
+    <ImageView
+
+        android:id="@+id/iv_scan"
+        android:layout_width="@dimen/px_space_80"
+        android:layout_height="@dimen/px_space_80"
+        android:src="@drawable/ic_scan"/>
+
+
+    <TextView
+        android:layout_marginTop="@dimen/px_space_50"
+        android:id="@+id/tv_from_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/title_red" />
+
 
 
 </LinearLayout>

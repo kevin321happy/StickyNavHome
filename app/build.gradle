@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     defaultConfig {
         applicationId "com.wh.jxd.com.stickynavhome"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -31,7 +31,10 @@ dependencies {
     //    implementation 'com.android.support:appcompat-v7:25.4.0'
     implementation 'com.android.support:recyclerview-v7:25.4.0'
     implementation 'com.android.support:design:25.4.0'
-    //新手引导
+    //二维码扫描库的封装
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
+    //权限处理
+    compile 'pub.devrel:easypermissions:0.2.0'
 
 
 }

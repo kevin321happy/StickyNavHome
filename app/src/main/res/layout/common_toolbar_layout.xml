@@ -29,4 +29,6 @@
         android:scrollHorizontally="true"
         android:textColor="@color/text__defaulttext"
         android:layout_gravity="center" />
+
+
 </android.support.v7.widget.Toolbar>
