@@ -17,7 +17,6 @@ android {
         }
     }
 }
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:25.4.0'
@@ -35,6 +34,4 @@ dependencies {
     compile 'cn.yipianfengye.android:zxing-library:2.2'
     //权限处理
     compile 'pub.devrel:easypermissions:0.2.0'
-
-
 }

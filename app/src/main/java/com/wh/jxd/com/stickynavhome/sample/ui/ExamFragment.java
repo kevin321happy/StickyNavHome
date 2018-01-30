@@ -35,7 +35,6 @@ public class ExamFragment extends BaseFragment implements View.OnClickListener {
         if (getArguments()!=null) {
             mType = getArguments().getString("type");
         }
-
         mRcv_pager = (RecyclerView) view.findViewById(R.id.rcv_pager);
         mTableLayout = (TableLayout) view.findViewById(R.id.tab_layout);
         mTableRow = (TableRow) view.findViewById(R.id.tab_row);
@@ -94,7 +93,6 @@ public class ExamFragment extends BaseFragment implements View.OnClickListener {
                 break;
         }
     }
-
     /**
      * 显示字体的高亮
      *

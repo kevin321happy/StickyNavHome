@@ -19,7 +19,6 @@ import java.util.List;
  */
 
 public class CallCentryActivtiy extends BaseActivtiy implements AdapterView.OnItemClickListener {
-
     private NoScrollListView mNLv;
     private CommonProblemAdapter mProblemAdapter;
     private List<String> mProblems = new ArrayList<>();
@@ -32,7 +31,7 @@ public class CallCentryActivtiy extends BaseActivtiy implements AdapterView.OnIt
     @Override
     protected void initView() {
         initData();
-        StatusBarUtil.setStatusBarColor(this, R.color.blue_shen);
+        StatusBarUtil.setStatusBarColor(this, R.color.transparent);
         hideToolBar();
         mNLv = (NoScrollListView) findViewById(R.id.nlv_common_problem);
         mIv_back = (ImageView) findViewById(R.id.iv_back);
@@ -47,7 +46,6 @@ public class CallCentryActivtiy extends BaseActivtiy implements AdapterView.OnIt
         mProblemAdapter.setCommonProblem(mProblems);
         mNLv.setAdapter(mProblemAdapter);
         mNLv.setOnItemClickListener(this);
-
     }
     private void initData() {
         mProblems.add("如何进行微课录制");

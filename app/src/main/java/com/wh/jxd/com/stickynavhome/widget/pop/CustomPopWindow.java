@@ -24,7 +24,6 @@ public class CustomPopWindow {
     private int mWidth;
     private boolean mIsFocusable = true;
     private boolean mIsOutside = true;
-
     private int mResLayoutId = -1;
     private View mContentView;
     private PopupWindow mPopupWindow;
@@ -106,7 +105,6 @@ public class CustomPopWindow {
         }
         return this;
     }
-
     /**
      * 消失POp
      */

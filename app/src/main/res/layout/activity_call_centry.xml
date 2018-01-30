@@ -2,13 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_shen"
+    android:background="@drawable/bule_gradient_bg"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:minHeight="?attr/actionBarSize">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/px_space_60"
+                android:layout_height="@dimen/px_space_60"
+                android:src="@drawable/ic_back" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/px_space_20"
+                android:text="返回"
+                android:textColor="@color/white" />
+        </android.support.v7.widget.LinearLayoutCompat>
 
-
+    </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,35 +40,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <android.support.v7.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/blue_shen"
-                android:minHeight="?attr/actionBarSize">
-
-                <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/iv_back"
-                        android:layout_width="@dimen/px_space_60"
-                        android:layout_height="@dimen/px_space_60"
-                        android:src="@drawable/ic_back" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/px_space_20"
-                        android:text="返回"
-                        android:textColor="@color/white" />
-                </android.support.v7.widget.LinearLayoutCompat>
-
-            </android.support.v7.widget.Toolbar>
-
-
             <com.wh.jxd.com.stickynavhome.widget.CircleImageView
                 android:layout_width="@dimen/px_space_120"
                 android:layout_height="@dimen/px_space_120"
@@ -132,11 +125,14 @@
                     <android.support.v7.widget.AppCompatEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="left"
                         android:layout_marginLeft="@dimen/px_space_30"
                         android:layout_marginRight="@dimen/px_space_30"
                         android:layout_marginTop="@dimen/px_space_20"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
                         android:background="@drawable/bg_shape_et_feed_back"
-                        android:lines="6" />
+                        android:lines="5" />
 
 
                     <Button
@@ -153,7 +149,7 @@
                 </LinearLayout>
             </RelativeLayout>
             <com.wh.jxd.com.stickynavhome.widget.DynamicWave
-                android:layout_marginTop="@dimen/px_space_200"
+                android:layout_marginTop="@dimen/px_space_50"
                 android:layout_width="match_parent"
                 android:layout_height="250px" />
         </LinearLayout>

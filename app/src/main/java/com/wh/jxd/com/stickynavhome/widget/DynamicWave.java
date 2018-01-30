@@ -12,12 +12,11 @@ import android.graphics.Paint.Style;
 import android.graphics.PaintFlagsDrawFilter;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.wh.jxd.com.stickynavhome.utils.UiUtils;
 
 public class DynamicWave extends View {
     // 波纹颜色
-    private static final String WAVE_PAINT_COLOR = "#50C2F8";
+    private static final String WAVE_PAINT_COLOR = "#406df2";
     // y = Asin(wx+b)+h
     private static final float STRETCH_FACTOR_A = 20;
     private static final int OFFSET_Y = 0;
@@ -26,7 +25,6 @@ public class DynamicWave extends View {
     // 第二条水波移动速度
     private static final int TRANSLATE_X_SPEED_TWO = 5;
     private float mCycleFactorW;
-
     private int mTotalWidth, mTotalHeight;
     private float[] mYPositions;
     private float[] mResetOneYPositions;
@@ -56,7 +54,6 @@ public class DynamicWave extends View {
         //加入抗锯齿
         mDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
     }
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

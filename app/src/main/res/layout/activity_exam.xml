@@ -51,8 +51,6 @@
                 android:textSize="25sp" />
         </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.Toolbar>
-
-
     <com.wh.jxd.com.stickynavhome.sample.widget.ViewPagerIndicator
             android:id="@+id/exam_indicator"
             android:layout_width="match_parent"

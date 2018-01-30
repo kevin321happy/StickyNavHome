@@ -112,7 +112,7 @@ public class ExamActivity extends BaseActivtiy implements View.OnClickListener {
         mMask.setOnClickListener(this);
         mRcv_pop = (RecyclerView) mListPopView.findViewById(R.id.rcv);
         mRcv_pop.setLayoutManager(new LinearLayoutManager(this));
-        mRcv_pop.setAdapter(new PoponeAdapter());
+
         mCustomPopWindow = new CustomPopWindow.Builder(this)
                 .setView(mListPopView)
                 .setOutsideTouchable(true)

@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
 //        CourseClassAdapter classAdapter = new CourseClassAdapter();
 //        rcv_course.setAdapter(classAdapter);
     }
-
     private void setData(CourseClassAdapter classAdapter) {
         List<CommonMenuBean> itemList = new ArrayList();
         for (int i = 0; i < 6; i++) {
@@ -172,8 +171,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
             status_bar.setAlpha(1 - offset);
         }
     }
-
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -197,7 +194,6 @@ public class MainActivity extends AppCompatActivity implements StickyNavLayout.o
         startActivity(intent);
     }
     //抽屉菜单的监听
-
     /**
      * 侧拉菜单的点击事件
      *

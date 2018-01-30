@@ -20,7 +20,6 @@ public class CampaignAdapter extends RecyclerView.Adapter {
         ViewHodler viewHodler = new ViewHodler(item);
         return viewHodler;
     }
-
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHodler hodler = (ViewHodler) holder;
@@ -31,22 +30,17 @@ public class CampaignAdapter extends RecyclerView.Adapter {
         }else {
             hodler.type.setBackgroundColor(mContext.getResources().getColor(R.color.title_red));
         }
-
     }
-
     @Override
     public int getItemCount() {
         return 10;
     }
-
     public  class ViewHodler extends RecyclerView.ViewHolder{
         private TextView tv_questions_count;
         private TextView tv_end_time;
         private TextView tv_apply;
         private TextView tv_title;
         private View type;
-
-
 
         public ViewHodler(View itemView) {
             super(itemView);

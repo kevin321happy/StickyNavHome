@@ -31,7 +31,6 @@ public class TrainingHelperActivity extends BaseActivtiy implements View.OnClick
     private CommonMenuAdapter mCommonMenuAdapter;
     private TextView mTv_child_title;
     private TextView mTv_train_title;
-
     @Override
     protected int getLayoutId() {
         StatusBarUtil.setStatusBarColor(this, R.color.white);
@@ -53,7 +52,6 @@ public class TrainingHelperActivity extends BaseActivtiy implements View.OnClick
         mRcv_menu.setAdapter(mCommonMenuAdapter);
         mCommonMenuAdapter.setOnRecycleListener(this);
     }
-
     /**
      * 初始化数据
      */
